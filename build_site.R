@@ -5,3 +5,6 @@ create_footer()
 
 # Then render the site
 rmarkdown::render_site(encoding = 'UTF-8')
+
+# Then copy in the redirects file
+fs::file_copy("_redirects", "_site/_redirects")
