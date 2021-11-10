@@ -1,12 +1,39 @@
-name: "."
-title: "Personal site"
+name: "samabbott.co.uk"
+title: "Sam Abbott"
 description: |
-  Personal site
+  Links to my tweets, blog, notes, research ideas, code, and papers. 
 output_dir: "_site"
 navbar:
+  logo:
+    image: party-hat.jpg
+    href: https://samabbott.co.uk
+  search: true
   right:
     - text: "Home"
       href: index.html
+    - text: "Notes"
+      href: https://notes.samabbott.co.uk
+    - text: "Research ideas"
+      href: https://github.com/seabbs/seabbs/issues
+    - text: "Code"
+      href: https://github.com/seabbs
+    - text: "Papers"
+      href: https://scholar.google.co.uk/citations?user=GqZm90IAAAAJ
+    - text: "Talks"
+      href: talks.html
     - text: "About"
       href: about.html
-output: distill::distill_article
+    - icon: fa fa-rss
+      href: index.xml
+output: 
+  distill::distill_article:
+    css: style.css
+base_url: "https://samabbott.co.uk"
+repository_url: https://gitbub.com/seabbs/seabbs.github.io
+favicon: party-hat.jpg
+create_commons: CC BY
+twitter: 
+  site: "@seabbs"
+collections:
+  posts:
+    share: [twitter]

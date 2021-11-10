@@ -1,5 +1,5 @@
 ---
-title: "Personal site"
+title: "Sam Abbott"
 site: distill::distill_website
 listing: posts
 ---

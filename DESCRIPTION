@@ -1,0 +1,15 @@
+Package: seabbs.github.io
+Title: Personal website for Sam Abbott
+Version: 1.0
+Authors@R: c(
+  person("Sam", "Abbott", "contact@samabbott.co.uk", c("aut", "cre"))
+  )
+Depends: R (>= 4.1.2)
+URL: https://github.com/seabbs/seabbs.github.io
+Imports:
+  devtools,
+  distill,
+  knitr,
+  postcards,
+  rmarkdown
+RoxygenNote: 6.1.1

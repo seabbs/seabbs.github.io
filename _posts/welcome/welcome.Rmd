@@ -1,10 +1,9 @@
 ---
-title: "Welcome to Personal site"
+title: "Blogdown -> Distill"
 description: |
-  Welcome to our new blog, Personal site. We hope you enjoy 
-  reading what we have to say!
+  Following the crowd and switching from Blogdown to Distill
 author:
-  - name: Nora Jones 
+  - name: Sam Abbott 
     url: https://example.com/norajones
     affiliation: Spacely Sprockets
     affiliation_url: https://example.com/spacelysprokets

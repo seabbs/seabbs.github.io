@@ -1,19 +1,27 @@
 ---
-title: "Tobi Burns"
-image: "tobi.jpg"
+title: "Sam Abbott"
+image: "party-hat.jpg"
 links:
-  - label: LinkedIn
-    url: "https://linkedin.com/"
-  - label: Twitter
-    url: "https://twitter.com/"
-  - label: GitHub
-    url: "https://github.com/"
-  - label: Email
-    url: "mailto:email@email.com"
+  - label: Tweets
+    url: "https://twitter.com/seabbs"
+  - label: Blog
+    url: "https://samabbott.co.uk"
+  - label: Notes
+    url: "https://notes.samabbott.co.uk"
+  - label: Research ideas
+    url: "https://github.com/seabbs/seabbs/issues"
+  - label: Code
+    url: "https://github.com/seabbs"
+  - label: Papers
+    url: "https://scholar.google.co.uk/citations?user=GqZm90IAAAAJ"
 output:
-  postcards::jolla
+  postcards::trestles
 ---
  
-I am a classically trained data scientist living in the San Francisco Bay Area. 
-Currently I work on the Oculus team at Facebook. I love talking about baseball, 
-true crime podcasts, and causal inference.
+```{r, echo = FALSE, message = FALSE, results = "asis"}
+path <- tempfile()
+download.file("https://raw.githubusercontent.com/seabbs/seabbs/main/README.md",
+              destfile = path)
+res <- knitr::knit_child(path, quiet = TRUE)
+cat(res, sep = '\n')
+```
