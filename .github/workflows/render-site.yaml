@@ -59,6 +59,7 @@ jobs:
     runs-on: macOS-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+    steps:
     - uses: actions/checkout@v2
     - name: Make a clean gh-pages branch
       run: |
