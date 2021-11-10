@@ -155,18 +155,10 @@ make_showcase_chunks <- function(sites, image_width = 600) {
 
 create_footer <- function() {
 
-  fill <- '#1f1f1f'
+  fill <- '#000000'
   height <- '13px'
 
   footer <- HTML(paste0(
-  'Made with ',
-  fontawesome::fa('heart', fill = fill, height = height), ', [',
-  fontawesome::fa('code-branch', fill = fill, height = height),
-  '](https://github.com/jhelvy), the [',
-  fontawesome::fa('r-project', fill = fill, height = height),
-  '](https://cran.r-project.org/) ',
-  '[distill](https://github.com/rstudio/distill) package, and the [distillery](https://distillery.rbind.io).\n', # nolint
-  br(),
   "Enjoyed your visit? [Tweet at me to let me know](https://twitter.com/seabbs).", # nolint
   br(),
   "If ever in Bristol/Bath/London lets get a beer/coffee or go for a run.", # nolint
