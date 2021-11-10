@@ -37,3 +37,4 @@ rsconnect/
 
 # Dont commit site
 _site
+_footer.html

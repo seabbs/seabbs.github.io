@@ -8,7 +8,7 @@ links:
     url: "https://samabbott.co.uk"
   - label: Notes
     url: "https://notes.samabbott.co.uk"
-  - label: Research ideas
+  - label: Ideas
     url: "https://github.com/seabbs/seabbs/issues"
   - label: Code
     url: "https://github.com/seabbs"

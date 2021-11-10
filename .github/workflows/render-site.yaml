@@ -44,7 +44,7 @@ jobs:
         
       - name: Render site
         run: |
-          rmarkdown::render_site()
+          rmarkdown::render_site(encoding = "UTF-8")
         shell: Rscript {0}
 
       - uses: actions/upload-artifact@v2

@@ -1,0 +1,22 @@
+---
+title: "Moving from Blogdown to Distill"
+description: |
+  A short post on moving from Blogdown to Distill.
+author:
+  - name: Sam Abbott
+date: 2021-11-10
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+
