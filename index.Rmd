@@ -1,0 +1,5 @@
+---
+title: "Personal site"
+site: distill::distill_website
+listing: posts
+---
