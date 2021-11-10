@@ -24,10 +24,10 @@ navbar:
       href: talks.html
     - text: "About"
       href: about.html
-    - icon: fa fa-rss
-      href: index.xml
     - icon: fab fa-twitter
       href: https://twitter.com/twitter
+    - icon: fa fa-rss
+      href: index.xml
 output: 
   distill::distill_article:
     includes:
