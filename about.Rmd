@@ -2,7 +2,7 @@
 title: "Sam Abbott"
 image: "party-hat.jpg"
 links:
-  - label: Tweets
+  - label: Twitter
     url: "https://twitter.com/seabbs"
   - label: Blog
     url: "https://samabbott.co.uk"
