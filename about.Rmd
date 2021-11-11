@@ -1,6 +1,6 @@
 ---
 title: "Sam Abbott"
-image: "party-hat.jpg"
+image: "images/party-hat.jpg"
 links:
   - label: Twitter
     url: "https://twitter.com/seabbs"

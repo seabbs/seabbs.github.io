@@ -33,12 +33,13 @@ output:
     includes:
       in_header:
       - _includes/utterances.html
-base_url: "https://samabbott.co.uk"
+base_url: "https://samabbott.co.uk/"
 repository_url: https://gitbub.com/seabbs/seabbs.github.io
-favicon: party-hat.jpg
+favicon: images/party-hat.jpg
 create_commons: CC BY
 twitter: 
   site: "@seabbs"
 collections:
   posts:
     share: [twitter]
+    subscribe: _subscribe.html
