@@ -42,4 +42,4 @@ twitter:
 collections:
   posts:
     share: [twitter]
-    subscribe: _subscribe.html
+    subscribe: _includes/subscribe.html
