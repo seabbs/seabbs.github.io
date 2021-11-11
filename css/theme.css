@@ -64,14 +64,14 @@ d-appendix {
   --title-size:       18px;
   --text-color:       #000;                     /* edited */
   --text-size:        15px;
-  --hover-color:      #ff00ff;                  /* edited */
+  --hover-color:      #ff7300;                  /* edited */
   --bkgd-color:       #fff;                     /* edited */
 }
 
 .distill-site-footer {
   --text-color:       #000;                     /* edited */
   --text-size:        13px;
-  --hover-color:      #ff00ff;                  /* edited */
+  --hover-color:      #ff7300;                  /* edited */
   --bkgd-color:       #fff;                     /* edited */
 }
 
