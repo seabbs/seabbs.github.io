@@ -6,7 +6,7 @@ description: |
 output_dir: "_site"
 navbar:
   logo:
-    image: party-hat.jpg
+    image: images/party-hat.jpg
     href: https://samabbott.co.uk
   search: false
   right:
