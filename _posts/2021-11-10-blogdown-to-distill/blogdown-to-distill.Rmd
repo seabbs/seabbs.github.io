@@ -15,7 +15,15 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-Distill is a publication format for scientific and technical writing, native to the web.
+A short note to state the obvious point that I have switched from using Blogdown to [Distill](https://rstudio.github.io/distill/) with [`postcards`](https://github.com/seankross/postcards). Full length blog posts and lay paper summaries will now be posted to this site whilst shorter notes and informal peer reviews will continue to be published to my [notes site](https://notes.samabbott.co.uk). Over the next few weeks I plan to build out the site a little more with short summaries of my research projects (both software and analysis) to aid discovery.
+
+Distill is a publication format for scientific and technical writing, native to the web and has become quite popular over the last few year. It is relative simple to use and should hopefully be easier to maintain than my last blogdown site. At work I have been using Distill to power our [COVID-19 surveillance site](https://epiforecasts.io/covid) and whilst it isn't the slickest website in the world it has been relatively easy to keep running over the last two years whilst server 500k+ users (though from the GitHub issues I could believe they all hated it). 
+
+This implementation draws heavily from the [custom theme used by Miles Mcbain](https://www.milesmcbain.com)and from the [Distillery](https://distillery.rbind.io). From a technical standpoint there is little that is particularly exciting here except potentially the use of child documents to integration my GitHub [about me page](https://github.com/seabbs/seabbs.github.io/blob/main/about.Rmd#L21) and [presentation repository](https://github.com/seabbs/seabbs.github.io/blob/main/talks.Rmd#L7), and the staged deployment of the site using [GitHub actions](https://github.com/seabbs/seabbs.github.io/blob/main/.github/workflows/render-site.yaml) (building the site for all `main` branch pushes and for all PRs to the main branch and then only deploying to an orphaned `gh-pages` branch for `main` branch builds). 
+
+My old site and blog is still available at [https://www.samabbott.co.uk/blogdown-site](https://www.samabbott.co.uk/blogdown-site) and I will be adding redirects to posts if and when people want to read them.
+
+
 
 Learn more about using Distill at <https://rstudio.github.io/distill>.
 
