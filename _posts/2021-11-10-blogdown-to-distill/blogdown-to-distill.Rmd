@@ -1,5 +1,7 @@
 ---
 title: "Moving from Blogdown to Distill"
+description:
+  "A short note to state the obvious point that I have switched from using Blogdown to Distill with postcards."
 author:
   - name: Sam Abbott
 date: 2021-11-10
