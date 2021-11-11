@@ -1,7 +1,5 @@
 ---
 title: "Moving from Blogdown to Distill"
-description: |
-  A short post on moving from Blogdown to Distill.
 author:
   - name: Sam Abbott
 date: 2021-11-10
