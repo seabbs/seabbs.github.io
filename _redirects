@@ -1,5 +1,9 @@
+/about /
+
+# automatically redirect old posts
 /post/* /blogdown-site/post/*
 
+# manually redirect old posts
 post/gettbinr-7-0/ post/blogdown-site/gettbinr-7-0/
 post/tb-gifs/ post/blogdown-site/tb-gifs/
 post/gettbinr-6-0/ post/blogdown-site/gettbinr-6-0/

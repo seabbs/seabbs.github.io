@@ -10,8 +10,8 @@ navbar:
     href: https://samabbott.co.uk
   search: false
   right:
-    - text: "Home"
-      href: index.html
+    - text: "Posts"
+      href: posts.html
     - text: "Notes"
       href: https://notes.samabbott.co.uk
     - text: "Ideas"
@@ -23,7 +23,7 @@ navbar:
     - text: "Talks"
       href: talks.html
     - text: "About"
-      href: about.html
+      href: index.html
     - icon: fab fa-twitter
       href: https://twitter.com/seabbs
     - icon: fa fa-rss
