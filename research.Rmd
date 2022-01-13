@@ -1,7 +1,7 @@
 ---
 title: "Research"
 description: | 
-  Research interests and current and past research.
+  Research interests + current and past research.
 ---
 
 My main research interest lies in developing, evaluating, and applying methods for improving our understanding of infectious disease dynamics in real-time. I am committed to doing science in the open, and collaboratively, with the aim of producing useful and actionable output. Most of my recent work has been targeted towards the COVID-19 response but my underlying focus is pathogen agnostic sparse data settings. 
