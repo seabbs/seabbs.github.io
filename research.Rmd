@@ -1,0 +1,12 @@
+---
+title: "Research"
+description: | 
+  Research interests and current and past research.
+---
+
+My main research interest lies in developing, evaluating, and applying methods for improving our understanding of infectious disease dynamics in real-time. I am committed to doing science in the open, and collaboratively, with the aim of producing useful and actionable output. Most of my recent work has been targeted towards the COVID-19 response but my underlying focus is pathogen agnostic sparse data settings. 
+
+My current main areas of work are [developing](https://epiforecasts.io/epinowcast/) and [evaluating](https://epiforecasts.io/eval-germany-sp-nowcasting/) methods for nowcasting right truncated data, [developing](https://epiforecasts.io/forecast.vocs) and [evaluating](https://github.com/epiforecasts/evaluate-delta-for-forecasting)
+methods to forecast and understand variant dynamics, reconstructing unobserved infections from a range of data sources (such as [count data](https://epiforecasts.io/EpiNow2) and [prevalence measures](https://github.com/epiforecasts/inc2prev)), and developing methods for the estimation of the [effective reproduction number](https://epiforecasts.io/EpiNow2), [the growth rate](https://epiforecasts.io/omicron-sgtf-forecast/), and [generation interval distribution](https://www.medrxiv.org/content/10.1101/2022.01.08.22268920) as well as use cases for these estimates and understanding their interactions. 
+
+If interested in collaborating please reach out. I recieve [rave reviews](https://twitter.com/johannesbracher/status/1473711507015884803) (*note may not be representative of the actual collaboration experience*).
