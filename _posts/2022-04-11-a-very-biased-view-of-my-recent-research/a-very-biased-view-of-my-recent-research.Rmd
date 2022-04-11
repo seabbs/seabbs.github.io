@@ -39,15 +39,15 @@ Outside of my core academic work I routinely share my research, and summaries of
 
 ## Highlighted research
 
-1. [Estimating the time-varying reproduction number of SARS-CoV-2 using national and subnational case counts](https://doi.org/10.12688/wellcomeopenres.16006.2)
+1. Estimating the time-varying reproduction number of SARS-CoV-2 using national and subnational case counts^[Preprint summarising this project here: https://doi.org/10.12688/wellcomeopenres.16006.2]
 
 This work was widely used as a surveillance tool globally during the COVID-19 pandemic and also represents a substantial methodological advance in the field. It continues to be used as a baseline for assessing the robustness of other methods. I led the development of methodology and open-source software to estimate the time-varying effective reproduction number. I also led the development of the website front-end, data pipeline, and computational pipeline (in collaboration with the Met office) to provide estimates for over 1000 locations each day. The [website](https://epiforecasts.io/covid/) where these estimates are presented has had over 500k unique users. Short-term forecasts from this pipeline have been submitted to SAGE, and the CDC and ECDC forecasting hubs. This work gave me insight into developing methods for real-time usage and their deployment at scale.
 
-2. [Estimated transmissibility and impact of SARS-CoV-2 lineage B. 1.1. 7 in England](https://doi.org/10.1126/science.abg3055)
+2. Estimated transmissibility and impact of SARS-CoV-2 lineage B. 1.1. 7 in England^[Read more about this here (though most of the details of my contribution are in the SI): https://doi.org/10.1126/science.abg305]
 
 This work was conducted by a larger collaboration under intense time pressure over Christmas 2021. It impacted UK policy directly and was used globally to inform government responses. The approach taken in this study was to triangulate key values using multiple methods. I was responsible for the development of one of these analyses as well as reviewing the implementation of the other approaches used. This work built on the reproduction number estimate pipeline I led the development of and we extended and repurposed this approach to [estimate the transmissibility of the Delta variant](https://doi.org/10.1101/2021.11.30.21267056) and I subsequently further developed it to more robustly handle uncertainty^[Via a very clever (if I do say so myself) use of brms: https://github.com/epiforecasts/covid19.sgene.utla.rt/blob/main/R/variant_rt.r].
 
-3. [Estimation of the test-to-test distribution as a proxy for generation interval distribution for the Omicron variant in England](https://doi.org/10.1101/2022.01.08.22268920)
+3. Estimation of the test-to-test distribution as a proxy for generation interval distribution for the Omicron variant in England^[Available as a preprint here: https://doi.org/10.1101/2022.01.08.22268920]
 
 This work provided real-time evidence that the generation interval for the Omicron variant may be shorter than for the Delta variant. Evidence for this was key to policy decisions made during the Omicron wave and this evidence was some of the first available. I led the development of the novel semi-mechanistic method that linked Omicron growth rates with non-Omicron growth rates. I also led the development of the underlying software package^[forecast.vocs: https://epiforecasts.io/forecast.vocs/] used to produce these growth rate estimates and an earlier real time report tracking the time-varying transmission advantage of Omicron in England^[See this real-time report, and the code supporting it here: https://epiforecasts.io/omicron-sgtf-forecast/]. 
 
@@ -55,7 +55,7 @@ This work provided real-time evidence that the generation interval for the Omicr
 
 Despite this work still being in progress I feel it captures the range of my research impact as it includes a core methodological development, work to democratise access to this development and previous developments, extensive and detailed evaluation (being drafted for peer review), offers utility to decision makers via the Germany nowcasting hub, support for other contributors for example researchers at ETH Zurich and at Stockholm University, and support for users for example the masters student at the University of Warwick who I will be co-supervising to use this tooling. By design it is modular and I expect this to be a fruitful area of research in the medium term. This project was undertaken fully independently with all aspects being planned and conducted without support from others.
 
-5. [Feasibility of controlling COVID-19 outbreaks by isolation of cases and contacts](https://doi.org/10.1016/S2214-109X(20)30074-7)
+5. Feasibility of controlling COVID-19 outbreaks by isolation of cases and contacts^[See here: https://doi.org/10.1016/S2214-109X(20)30074-7]
 
 This study was led by Joel Hellewell^[Check out his blog here: 
 https://jhellewell14.github.io/] and was conducted in early 2020 when little was known about COVID-19. It provided timely and rigourous evidence[^There is some debate about this: https://doi.org/10.1016/S2214-109X(20)30219-9] that contact tracing alone would likely to insufficient for elimination and was widely used to inform policy. I supported all aspects of this analysis and led on the computational components which were crucial for its widespread reuse by other research groups.
