@@ -12,8 +12,6 @@ author:
     affiliation: London School of Hygiene and Tropical Medicine
     affiliation_url: https://www.lshtm.ac.uk/
 date: 2022-03-25
-toc: true
-toc-depth: 2
 creative_commons: CC BY
 twitter:
   site: "@epiforecasts"
@@ -24,6 +22,8 @@ image: example-rt.png
 output:
   distill::distill_article:
     self_contained: false
+    toc: true
+    toc_depth: 2
 ---
 
 *This post was originally posted to [epiforecasts.io](https://epiforecasts.io/posts/2022-03-25-rt-reflections/rt-reflections.html) and has been reposted here with consent of the authors*

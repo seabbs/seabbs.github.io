@@ -6,13 +6,13 @@ author:
   - name: Sam Abbott
     url: https://samabbott.co.uk
 date: 2022-04-11
-toc: true
-toc-depth: 2
 creative_commons: CC BY
 cite: true
 output:
   distill::distill_article:
     self_contained: false
+    toc: true
+    toc_depth: 2
 ---
 
 A very biased overview of my recent research output as written for an internal promotion application. The brief was to summarise your research direction, your research output, steps taken to become an independent researcher, and then highlight 5 pieces of research output along with your contribution. As such take everything you read here with a large pinch of salt and replace all the I statements with We statements. However, if any of this sounds like fun to you then I am looking for collaborators and funding (ideally with few to no hoops). 
