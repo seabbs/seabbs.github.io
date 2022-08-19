@@ -1,7 +1,7 @@
 ---
 title: "My application to be an instructor with Applied Epi"
 description: |
-  The cover letter I provided as part of my application to be an instructor with the Applied Epi organisation. Contains thoughts on the motivation for my work, details of my prior exerperience, and thoughts on user based software development.
+  The cover letter I provided as part of my application to be an instructor with the Applied Epi organisation. Contains thoughts on the motivation for my work, details of my prior experience, and thoughts on user based software development.
 author:
   - name: Sam Abbott
     url: https://samabbott.co.uk
