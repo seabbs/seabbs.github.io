@@ -1,7 +1,7 @@
 ---
 title: "Evaluating an epidemiologically motivated surrogate model of a multi-model ensemble"
 description: |
-  Multi-model and multi-team ensemble forecasts have become widely used to generate reliable short-term. Whilst there is robust and consistent evidence that multi-team ensemble forecasts provide reliable and performant forecasts across domains they also have a range of downsides. The most significant is the difficulty in interpreting them. Here we develop a parsimonious forecast model based on observations of ensemble behaviour and evaluate its predictive performance.
+  Multi-model and multi-team ensemble forecasts have become widely used to generate reliable short-term forecasts. Whilst there is robust and consistent evidence that multi-team ensemble forecasts provide reliable and performant forecasts across domains they also have a range of downsides. The most significant is the difficulty in interpreting them. Here we develop a parsimonious forecast model based on observations of ensemble behaviour and evaluate its predictive performance.
 author:
   - name: Sam Abbott
     url: https://samabbott.co.uk
