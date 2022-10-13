@@ -1,0 +1,46 @@
+---
+title: "Evaluating an epidemiologically motivated surrogate model of a multi-model ensemble"
+description: |
+  Multi-model and multi-team ensemble forecasts have become widely used to generate reliable short-term. Whilst there is robust and consistent evidence that multi-team ensemble forecasts provide reliable and performant forecasts across domains they also have a range of downsides. The most significant is the difficulty in interpreting them. Here we develop a parsimonious forecast model based on observations of ensemble behaviour and evaluate its predictive performance.
+author:
+  - name: Sam Abbott
+    url: https://samabbott.co.uk
+date: 2022-10-13
+image: forecast-performance.png
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+**Light the beacons - we have a new preprint**
+
+# Where can I read it?
+
+You can read the paper [here](https://www.medrxiv.org/content/10.1101/2022.10.12.22280917v1.full.pdf). If interested in the code repository you can check it out [here](https://github.com/epiforecasts/simplified-forecaster-evaluation). I particularly recommend the commit messages as they give a fun window into the [writing process](https://github.com/epiforecasts/simplified-forecaster-evaluation/commits/main). For the kind of people that just want model code check it out [here](https://github.com/seabbs/ecdc-weekly-growth-forecasts/blob/01ddac12b9d591e2078928dd3c2cbae4b3b1e681/model.stan).
+
+
+# What we did
+
+- We discuss observations, advantages, and limitations of the European Forecast Hub and our own prior submissions.
+- We use these observations to develop a simple model meant to replicate the Forecast Hub ensembles behaviour.
+- We compare our surrogate model with the Forecast Hub ensemble over period of 6 months using forecasts submitted each week to the Forecast Hub.
+- We do lots of detailed forecast evaluation and try hard to get some insights.
+- We round it out with a critique of our work and some suggestions for the future.
+- We also provide a GitHub powered workflow for producing a forecast so you can make your own^[If interested in this you can use this to submit your forecasts to the European Forecast Hub: https://github.com/covid19-forecast-hub-europe/covid19-forecast-hub-europe-submissions].
+
+# Why does this paper exist?
+
+Over the last few years we have produced a lot of forecasts. In particular, we have submitted weekly to US, European, and German/Poland Forecast Hubs using a range of models for an extended period of time^[You can read more about some of these methods here: https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010405]. An interesting aspect of submitting to these platforms is that your forecast becomes part of another product, the forecast ensemble. This is a good thing as ensembles are typically more robust than forecasts from single models and in many cases give better performing forecasts. However, they can be very hard to learn from, and though we have really tried to learn more about how to forecast it has been difficult. 
+
+In the summer of 2021, I was getting a little frustrated at the lack of progress improving our forecasting approaches. It felt like we needed to go back to the basics of the models we were using in order to learn things. I was also seeing a lot of discussion about the use of genomic data for surveillance and wanted to do some investigation. As great minds think alike, Johannes Bracher had recently developed a short-term forecasting model that included variant dynamics. I shamelessly stole this^[with some adaption perhaps] and reimplemented it in a model PPL^[shots fired JAGs] - creating the [`forecast.vocs` R package](https://epiforecasts.io/forecast.vocs/). Everything was steaming ahead to do a large-scale evaluation of using sequences for short-term case forecasts^[We are now circling back to this and I think it should turn out to be pretty interesting]. Unfortunately, storm clouds were brewing. 
+
+In the winter of 2021 we started to see news of the Omicron variant, with the first reports coming out of South Africa^[Great job SA!]. This looked like bad news. Several of the authors of this study helped pivot the `forecast.vocs` R package to start looking at the transmission advantage of this variant, as well as trying to estimate if it was changing over time (as an indicator of immune escape), and to produce short-term case forecasts^[See a version of the report here: https://github.com/epiforecasts/omicron-sgtf-forecast]. We were able to do this as, unlike forecast ensembles, our model was very simple and easy to modify. 
+
+Sadly, I like many people then proceeded to catch COVID-19^[On Christmas day from an extended family member - it was a little awkward.]. This meant I was consigned to the house with really very little to do whilst cooling down from a very intense work period^[Daily model updates and a several other related bits of work - tiring!]. The natural thing to do was browse the various Forecast Hub websites and think about how the models were performing and trying to see if they were managing to deal with the rise of Omicron. After jotting down some notes about how I thought things were working I realised that the model we had been using for our Omicron work was perhaps a good test bench for seeing if my ideas for why the ensemble behaved the way it did were correct. Some intense hacking on the `forecast.vocs` model followed and this paper was borne. 
+
+After this semi-delusional rampage some adults^[i.e. my lovely co-authors] entered the picture and transformed this from a vague idea into a complete bit of work. It has been really great working with them all and I would thoroughly recommend it. 
