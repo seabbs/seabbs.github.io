@@ -6,6 +6,7 @@ author:
   - name: Sam Abbott
     url: https://samabbott.co.uk
 date: 2022-10-13
+preview: poll.png
 output:
   distill::distill_article:
     self_contained: false
