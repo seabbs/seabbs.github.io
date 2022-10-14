@@ -6,7 +6,7 @@ author:
   - name: Sam Abbott
     url: https://samabbott.co.uk
 date: 2022-10-13
-image: forecast-performance.png
+preview: forecast-performance.png
 output:
   distill::distill_article:
     self_contained: false
@@ -43,6 +43,6 @@ In the summer of 2021, I was getting a little frustrated at the lack of progress
 
 In the winter of 2021 we started to see news of the Omicron variant with the first reports coming out of South Africa^[Great job SA!]. This looked like bad news. Several of the authors of this study helped pivot the `forecast.vocs` R package to start looking at the transmission advantage of this variant, as well as trying to estimate if it was changing over time (as an indicator of immune escape), and to produce short-term case forecasts^[See a version of the report here: https://github.com/epiforecasts/omicron-sgtf-forecast]. We were able to do this as, unlike forecast ensembles, our model was very simple and easy to modify. 
 
-Sadly, I like many people then proceeded to catch COVID-19^[On Christmas day from an extended family member - it was a little awkward.]. This meant I was consigned to the house with really very little to do whilst cooling down from a very intense work period^[Daily model updates and a several other related bits of work - tiring!]. The natural thing to do was browse the various Forecast Hub websites and think about how the models were performing and trying to see if they were managing to deal with the rise of Omicron. After jotting down some notes about how I thought things were working I realised that the model we had been using for our Omicron work was perhaps a good test bench for seeing if my ideas for why the ensemble behaved the way it did were correct. Some intense hacking on the `forecast.vocs` model followed and this paper was borne. 
+Sadly, I like many people then proceeded to catch COVID-19^[On Christmas day from an extended family member - it was a little awkward.]. This meant I was consigned to the house with really very little to do whilst cooling down from a very intense work period^[Daily model updates and a several other related bits of work - tiring!]. The natural thing to do was browse the various Forecast Hub websites and think about how the models were performing and trying to see if they were managing to deal with the rise of Omicron. After jotting down some notes about how I thought things were working I realised that the model we had been using for our Omicron work was perhaps a good test bench for seeing if my ideas for why the ensemble behaved the way it did were correct. Some intense hacking on the `forecast.vocs` model followed and this paper was born. 
 
 After this semi-delusional rampage some adults^[i.e. my lovely co-authors] entered the picture and transformed this from a vague idea into a complete bit of work. It has been really great working with them all and I would thoroughly recommend it. 
