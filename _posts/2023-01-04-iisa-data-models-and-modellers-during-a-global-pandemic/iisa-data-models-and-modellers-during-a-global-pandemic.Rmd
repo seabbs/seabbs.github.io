@@ -1,7 +1,7 @@
 ---
 title: "Data, Models, and Modellers during a Global Pandemic"
 description: |
-  My notes for my points and answers as part of the Data, Models, and Modellers during a Global Pandemic discussion session at the International Indian Statistical Association 2022 meeting. Also includes the recroding my talk on Evaluating an epidemiologically motivated surrogate model of a multi-model ensemble as part of the Pandemic forecasting: Lessons learnt from COVID-19 session session.
+  My notes for my points and answers as part of the Data, Models, and Modellers during a Global Pandemic discussion session at the International Indian Statistical Association 2022 meeting. Also includes the recording of my talk on our recent paper "Evaluating an epidemiologically motivated surrogate model of a multi-model ensemble" as part of the Pandemic forecasting: Lessons learnt from COVID-19 session.
 author:
   - name: Sam Abbott
     url: https://samabbott.co.uk
@@ -19,19 +19,23 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-As my last work commitment of 2022 I took part in a discussion session with [Swapnil Mishra](https://twitter.com/creswapi) and [Rukmini S.](https://twitter.com/Rukmini) (whose [book](https://www.amazon.in/-/hi/Rukmini-S/dp/9391234674?language=en_IN&ref=in_wplc_social&tag=wlsocial-21_wholenumbersandhalftruths) I am looking forward to reading) on Data, Models, and Modellers during a Global Pandemic discussion. I thought some interesting points were made but sadly, as far as I am aware, there is no recording. As a very poor substitute to what was an interesting discussion I have included the notes for my points and answers below. I aimed to give an overview of how the key topics (data, models, and modellers) changed over the last three years.
+As my last work commitment of 2022 I took part in a discussion session with [Swapnil Mishra](https://twitter.com/creswapi) and [Rukmini S.](https://twitter.com/Rukmini) (whose [book](https://www.amazon.in/-/hi/Rukmini-S/dp/9391234674?language=en_IN&ref=in_wplc_social&tag=wlsocial-21_wholenumbersandhalftruths) I am looking forward to reading) on Data, Models, and Modellers during a Global Pandemic discussion. I thought some interesting points were made but sadly, as far as I am aware, there is no recording. As a very poor substitute to what was an interesting discussion I have included the notes for my points and answers below. I aimed to give an overview of how the key topics (data, models, and modellers) changed over the last three years for me.
 
-I also gave a talk on our recent paper "Evaluating an epidemiologically motivated surrogate model of a multi-model ensemble" and I've included the recording below. As ever I sound quite insane to myself when listening back but hopefully you can push past that as I think the paper is interesting and worth a read.
+I also gave a talk on our recent paper "Evaluating an epidemiologically motivated surrogate model of a multi-model ensemble" and I've included the recording below. As ever, I sound quite insane to myself when listening back but hopefully you can push past that as I think the paper is interesting and worth a read.
 
 Thanks to [Bhramar Mukherjee](https://twitter.com/BhramarBioStat) for the invitation and for hosting the discussion so ably. Apologies for my terrible organisational abilities - I promise it isn't just a technique to make myself appear like an academic stereotype (perhaps it would be better if it were).
 
-If anyone listening to this thought "Oh my what an engaging chap. I wish we could have him to talk" - The answer is yes you can! Just give me a ping.
+If anyone listening to this thought "Oh my what an engaging chap. I wish we could have him to talk" - The answer is yes you can! Just give me a ping (and then maybe another one a short time later).
 
 ## Pandemic forecasting: Lessons learnt from COVID-19 session session
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/58_opCa2hWQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-You can read the paper [here](https://www.medrxiv.org/content/10.1101/2022.10.12.22280917v1.full.pdf). If interested in the code repository you can check it out [here](https://github.com/epiforecasts/simplified-forecaster-evaluation). Slides for this talk are available [here](https://samabbott.co.uk/presentations/2023/IISA-surrogate-ensemble-forecasting-hub.pdf).
+Slides for this talk are available [here](https://samabbott.co.uk/presentations/2023/IISA-surrogate-ensemble-forecasting-hub.pdf).
+
+You can read the paper [here](https://www.medrxiv.org/content/10.1101/2022.10.12.22280917v1.full.pdf).
+
+If interested in the code repository you can check it out [here](https://github.com/epiforecasts/simplified-forecaster-evaluation).
 
 ## Data, Models, and Modellers during a Global Pandemic
 
@@ -135,7 +139,7 @@ A brief overview of my experience of each of the main areas of this panel over t
 - Profoundly. I would say I am borderline no longer now an academic in the traditional sense and I am not sure I am interested in moving back in this direction.
 - Very interested in thinking about how to develop a community of practice and a community supported suite of outbreak surveillance tools. Also interested in why efforts in this direction keep failing.
 - Lessons learnt about when it is useful to have a custom method and when we need more custom methodology was very important. In general I now try to make all work as modular as possible and as easy for others to hack on as possible.
-- The other vital realisation is how important being at least 80% but on time was (there is a nice paper by Chris Whitty (UK chief medical officer) on this). We need methods that allows us to do this for as many questions as we are likely to have in a similar scale outbreak (which could look very different in ways that are hard  to predict).
+- The other vital realisation is how important being at least 80% but on time was (there is a nice paper by Chris Whitty (UK chief medical officer) on this). We need methods that allows us to do this for as many questions as we are likely to have in a similar scale outbreak (which could look very different in ways that are hard to predict).
 
 #### What do you think are the biggest takeaways in terms of Scientific communications with the public and stakeholders? Some do's and some don'ts
 
