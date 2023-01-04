@@ -1523,7 +1523,15 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h3>Contents</h3>
 <ul>
 <li><a href="#pandemic-forecasting-lessons-learnt-from-covid-19-session-session">Pandemic forecasting: Lessons learnt from COVID-19 session session</a></li>
-<li><a href="#data-models-and-modellers-during-a-global-pandemic">Data, Models, and Modellers during a Global Pandemic</a></li>
+<li><a href="#data-models-and-modellers-during-a-global-pandemic">Data, Models, and Modellers during a Global Pandemic</a>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#me">Me</a></li>
+<li><a href="#data">Data</a></li>
+<li><a href="#models">Models</a></li>
+<li><a href="#modellers">Modellers</a></li>
+<li><a href="#questions">Questions</a></li>
+</ul></li>
 </ul>
 </nav>
 </div>
@@ -1531,18 +1539,18 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p>I also gave a talk on our recent paper “Evaluating an epidemiologically motivated surrogate model of a multi-model ensemble” and I’ve included the recording below. As ever, I sound quite insane to myself when listening back but hopefully you can push past that as I think the paper is interesting and worth a read.</p>
 <p>Thanks to <a href="https://twitter.com/BhramarBioStat">Bhramar Mukherjee</a> for the invitation and for hosting the discussion so ably. Apologies for my terrible organisational abilities - I promise it isn’t just a technique to make myself appear like an academic stereotype (perhaps it would be better if it were).</p>
 <p>If anyone listening to this thought “Oh my what an engaging chap. I wish we could have him to talk” - The answer is yes you can! Just give me a ping (and then maybe another one a short time later).</p>
-<h2 id="pandemic-forecasting-lessons-learnt-from-covid-19-session-session">Pandemic forecasting: Lessons learnt from COVID-19 session session</h2>
+<h1 id="pandemic-forecasting-lessons-learnt-from-covid-19-session-session">Pandemic forecasting: Lessons learnt from COVID-19 session session</h1>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/58_opCa2hWQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
 </iframe>
 <p>Slides for this talk are available <a href="https://samabbott.co.uk/presentations/2023/IISA-surrogate-ensemble-forecasting-hub.pdf">here</a>.</p>
 <p>You can read the paper <a href="https://www.medrxiv.org/content/10.1101/2022.10.12.22280917v1.full.pdf">here</a>.</p>
 <p>If interested in the code repository you can check it out <a href="https://github.com/epiforecasts/simplified-forecaster-evaluation">here</a>.</p>
-<h2 id="data-models-and-modellers-during-a-global-pandemic">Data, Models, and Modellers during a Global Pandemic</h2>
-<h3 id="introduction">Introduction</h3>
+<h1 id="data-models-and-modellers-during-a-global-pandemic">Data, Models, and Modellers during a Global Pandemic</h1>
+<h2 id="introduction">Introduction</h2>
 <p>Firstly thank you very much for inviting me to this panel I am looking forward to the discussion.</p>
 <p>Brief intro to me and my work.</p>
 <p>A brief overview of my experience of each of the main areas of this panel over the course of the pandemic and in particular highlight how this has changed with time.</p>
-<h3 id="me">Me</h3>
+<h2 id="me">Me</h2>
 <ul>
 <li>Background in mathematics and theoretical physics (this was bit hard for me). Moved into mathematical biology</li>
 <li>PhD in Bristol. Infectious disease modelling. BCG for Tuberculosis</li>
@@ -1555,8 +1563,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li>For the last 3 years kept iterating on this type of work along with reactive analysis (i.e transmissibility of variants etc) and more traditional academic (most recently particularly focussed on nowcasting methodology). Now shifting to writing this up for more traditional academic output.</li>
 <li>Main aim is to democratise access to robust methodology and generally improve the standard of real-time work which historically is often of lower quality than more traditional retrospective work.</li>
 </ul>
-<h3 id="data">Data</h3>
-<h4 id="section">2020</h4>
+<h2 id="data">Data</h2>
+<h3 id="section">2020</h3>
 <ul>
 <li>I started work on COVID-19 on the 12th of January. At this time we still only had case data coming out of China. This was sparsely reported and often delayed.</li>
 <li>Reports of detected cases in other countries started coming in and we started to use these both to understand the outbreak in China and to try and get a handle of local transmission.</li>
@@ -1566,7 +1574,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li>As testing became more widespread surveillance moved from hospitalised cases to community test positive cases (though in reality we used a blend of routine data)</li>
 <li>Data from other countries (at least at the national level) became easier to source but we still relied on our own framework for sub-national data.</li>
 </ul>
-<h4 id="section-1">2021</h4>
+<h3 id="section-1">2021</h3>
 <ul>
 <li>Appreciation of the unreliability of much testing data.</li>
 <li>Pivot back to the use of hospitalisations in the UK.</li>
@@ -1575,64 +1583,64 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li>More use (by us) of sequence data sources built by community contributions (like GISAID).</li>
 <li>Discussion of novel data sources (like cycle threshold by James Hay).</li>
 </ul>
-<h4 id="section-2">2022</h4>
+<h3 id="section-2">2022</h3>
 <ul>
 <li>Testing data less likely to be available daily.</li>
 <li>Testing data increasingly unreliable and other surveillance sources increasingly sparsely reported.</li>
 <li>Increased reliance on seroservalance, household studies, and prevalence studies.</li>
 <li>Shift in focus to working with Public health departments on their very rich data sources.</li>
 </ul>
-<h3 id="models">Models</h3>
-<h4 id="section-3">2020</h4>
+<h2 id="models">Models</h2>
+<h3 id="section-3">2020</h3>
 <ul>
 <li>Available methods and software not useful for the vast majority of real-world questions we faced. Largely did not make use of epi domain tooling (but general statistical tooling was very useful).</li>
 <li>Reactive simple models. Designed based around available data sources and particular short-term analysis questions.</li>
 <li>Over time these developed into several routine “pipelines” (i.e chains of models) that we used to produce estimates of interest both in the UK for stakeholders and publicly world wide.</li>
 <li>In mid-2020 colleagues alerted us to issues (Katie Gostic) with our pipeline approach and we pivoted to a generative Bayesian model for our routine work.</li>
 </ul>
-<h4 id="section-4">2021</h4>
+<h3 id="section-4">2021</h3>
 <ul>
 <li>The detection and spread of new variants (of course this is also late 2020) could not be easily modelled (i.e not in the timeline required by policy makers) using our routine methods.</li>
 <li>We (and many colleagues) therefore had to go back to the model pipeline approach feeding output from one model into another as a data source (i.e to estimate variant transmissibility).</li>
 <li>Over time many specialist models were developed to deal with this particular question (both by us and others).</li>
 <li>More generally we began to develop more specialised models for particular high quality data sources (such as the ONS infection survey).</li>
 </ul>
-<h4 id="section-5">2022</h4>
+<h3 id="section-5">2022</h3>
 <ul>
 <li>The spread of Omicron posed challenges for these models in particular the potential for immunity evasion and a shorter generation time.</li>
 <li>Of those specialised models developed in 2021 that had not been abandoned/become inoperable most could not account for these features.</li>
 <li>Early analysis (by us and others) therefore again fell back on the pipeline approach of using model outputs as data in order to evaluate the evidence for a different generation time and immune escape.</li>
 <li>More detailed statistical modelling approaches to work with the detailed linelist data from partners (i.e nowcasting, Cycle threshold modelling). This seems to be a better pathway to impacting decision making.</li>
 </ul>
-<h3 id="modellers">Modellers</h3>
-<h4 id="section-6">2020</h4>
+<h2 id="modellers">Modellers</h2>
+<h3 id="section-6">2020</h3>
 <ul>
 <li>Huge community effort with many people from other fields.</li>
 <li>I personally worked ~ 18 hours a day for about 6 months.</li>
 <li>Often hard to collaborate on work especially across knowledge silos. This led to lots of poorly linked efforts and much repetition.</li>
 </ul>
-<h4 id="section-7">2021</h4>
+<h3 id="section-7">2021</h3>
 <ul>
 <li>Many colleagues - especially from other fields pivoted away from COVID-19.</li>
 <li>This meant that in many ways the amount of work to do actually increased.</li>
 <li>We received very little support for our routine modelling.</li>
 <li>As modelling became more complex we had to fall back on simpler methods due to lack of resources.</li>
 </ul>
-<h4 id="section-8">2022</h4>
+<h3 id="section-8">2022</h3>
 <ul>
 <li>Shift in focus to learning lessons from the pandemic and getting ready for the future.</li>
 <li>Trying to build a community of practice as community &gt;&gt; methods or models alone.</li>
 <li>As we move into 2023 hitting pause a little to take a breath and identify what the key challenges are and how the system can be made to recognise and respond to them.</li>
 </ul>
-<h3 id="questions">Questions</h3>
-<h4 id="how-did-the-data-science-work-during-the-pandemic-influence-your-post-pandemic-academic-scholarly-work">How did the data science work during the pandemic influence your post-pandemic academic scholarly work</h4>
+<h2 id="questions">Questions</h2>
+<h3 id="how-did-the-data-science-work-during-the-pandemic-influence-your-post-pandemic-academic-scholarly-work">How did the data science work during the pandemic influence your post-pandemic academic scholarly work</h3>
 <ul>
 <li>Profoundly. I would say I am borderline no longer now an academic in the traditional sense and I am not sure I am interested in moving back in this direction.</li>
 <li>Very interested in thinking about how to develop a community of practice and a community supported suite of outbreak surveillance tools. Also interested in why efforts in this direction keep failing.</li>
 <li>Lessons learnt about when it is useful to have a custom method and when we need more custom methodology was very important. In general I now try to make all work as modular as possible and as easy for others to hack on as possible.</li>
 <li>The other vital realisation is how important being at least 80% but on time was (there is a nice paper by Chris Whitty (UK chief medical officer) on this). We need methods that allows us to do this for as many questions as we are likely to have in a similar scale outbreak (which could look very different in ways that are hard to predict).</li>
 </ul>
-<h4 id="what-do-you-think-are-the-biggest-takeaways-in-terms-of-scientific-communications-with-the-public-and-stakeholders-some-dos-and-some-donts">What do you think are the biggest takeaways in terms of Scientific communications with the public and stakeholders? Some do’s and some don’ts</h4>
+<h3 id="what-do-you-think-are-the-biggest-takeaways-in-terms-of-scientific-communications-with-the-public-and-stakeholders-some-dos-and-some-donts">What do you think are the biggest takeaways in terms of Scientific communications with the public and stakeholders? Some do’s and some don’ts</h3>
 <ul>
 <li>Be as open as possible.</li>
 <li>Always clearly state the limitations of your work (ideally first).</li>
@@ -1641,16 +1649,16 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li>Joint statements across teams are very useful for public facing work as generally there is a broad consensus with different views on the details. If results are presented individually this can get lost and it incentivises being first out (and maybe therefore cutting corners). We saw a lot of rushed work during the pandemic because of poorly aligned incentive structures.</li>
 <li>I personally didn’t feel it was useful for me to directly interact with the public/media. No training. No time. Explaining the evidence not my speciality leave it to others for whom that is a speciality.</li>
 </ul>
-<h4 id="how-do-we-reward-such-contributions-in-more-traditional-academic-setting">How do we reward such contributions in more traditional academic setting?</h4>
+<h3 id="how-do-we-reward-such-contributions-in-more-traditional-academic-setting">How do we reward such contributions in more traditional academic setting?</h3>
 <ul>
 <li>This is really a question for those making these decisions. I have yet to see much movement on this which is a shame and it is nearly too late for those who worked on the pandemic.</li>
 <li>Lack of leadership here from senior academics and funders who have done well in the current system.</li>
 <li>There was a large amount of funding in the some locations for pandemic adjacent work but most of this was assigned using very traditional approaches.</li>
 <li>I think a good start would be valuing outputs other than peer reviewed papers more (like software and support of public health departments etc). There is pushback on this because it is “hard” but ultimately if you want to incentivise better work then more effort is needed by those allocating resources.</li>
 </ul>
-<h4 id="what-is-your-next-project">What is your next project</h4>
+<h3 id="what-is-your-next-project">What is your next project</h3>
 <ul>
-<li><a href="https://epinowcast.org"><code>{epinowcast}</code></a>: Aiming to deal with some of the issues I outlined above.</li>
+<li><a href="https://epinowcast.org"><code>{epinowcast}</code></a>: Aiming to deal with some of the issues I outlined above and provide a consistent set of tooling to answer outbreak and surveillance questions in real-time without having to reduce the quality of the work to below the 80% target threshold.</li>
 </ul>
 <h4 id="is-the-pandemic-over">Is the pandemic over</h4>
 <ul>
