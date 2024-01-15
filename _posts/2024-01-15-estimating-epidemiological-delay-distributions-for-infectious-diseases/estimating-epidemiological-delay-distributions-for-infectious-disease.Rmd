@@ -23,15 +23,15 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ![Poppy the puppy](poppy.png)
 
-**Warning: One five year-old described this paper as double extra boring - these comments have been noted and we are working on it (we still think it is both interesting and important though).**
+>Warning: One five year-old described this paper as double extra boring - these comments have been noted and we are working on it (we still think it is both interesting and important though).
 
 ## Where can I read it?
 
-You can read the paper [here](https://www.medrxiv.org/content/10.1101/2024.01.12.24301247v1). If interested in the code repository you can check it out [here]https://github.com/parksw3/epidist-paper). The in-progress package that generalises the paper code is available [here](https://github.com/epinowcast/epidist) (contributions welcome!).
+You can read the paper [here](https://www.medrxiv.org/content/10.1101/2024.01.12.24301247v1). If interested in the code repository you can check it out [here](https://github.com/parksw3/epidist-paper). The in-progress package that generalises the paper code is available [here](https://github.com/epinowcast/epidist) (contributions welcome!).
 
 ## What motivated this work?
 
-My involvement in this work grew out of my general confusion about how to best estimate delay distributions during outbreaks, and in particular, how the various methods that are used in practice compare and interact. I have been grappling with this [problem](https://package.epinowcast.org) for a while, but never to my complete satisfaction. This all came to a head when I was asked to help write an [editorial](https://www.bmj.com/content/379/bmj.o2504) for [Overtan et al.](https://www.bmj.com/content/379/bmj-2022-073153), and I realized I needed some help.
+My involvement in this work grew out of my general confusion about how to best estimate delay distributions during outbreaks, and in particular, how the various methods that are used in practice compare and interact. I have been grappling with this [problem](https://package.epinowcast.org) for a while, but never to my complete satisfaction. This all came to a head when I was asked to help write an [editorial](https://www.bmj.com/content/379/bmj.o2504) for [Ward et al. 2022](https://www.bmj.com/content/379/bmj-2022-073153), and I realized I needed some help.
 
 As is often the case when deep thinking is required, I reached out to Sang Woo Park for assistance. This began a rather long conversation where my main contribution was repeatedly admitting, "I don't understand." After a while, we arrived at this [gist](https://gist.github.com/seabbs/027cd1c439e8acf1d598cc03ef33aaa4), which finally made things click for me.
 
@@ -61,8 +61,8 @@ This collaboration led to a very enjoyable and productive period of tackling som
 - **Impact of neglecting biases:** Ignoring biases leads to flawed epidemiological estimates in nearly all scenarios.
 - **Dynamical bias and right truncation:** In a growing epidemic, these biases are nearly equivalent for delays with independent events and can be adjusted for using the same methods (*TLDR: Don't adjust for both in these settings *).
 - **Common censoring adjustment issues:** Naive discretization can cause biased estimates. Many ad-hoc methods exist and often perform poorly.
-- **Method performance:** Highlights the best performing methods and their limitations.
-- **Residual biases:** Persist across all methods, especially due to uniform distribution assumptions. *This is an area of further work!*
+- **Method performance:** Highlights the best performing methods (generally treating primary and secondary events as latent variables and estimating a continuous distribution normalised by the probability of observing the secondary event worked well. See the paper - its simpler than it sounds!) and their limitations.
+- **Residual biases:** Persist across all methods, especially due to uniform interval distribution assumptions when the delay was short compared to the censoring interval. *This is an area of further work!*
 
 Read the [paper](https://www.medrxiv.org/content/10.1101/2024.01.12.24301247v1) for more details (there is a summary at the beginning and in every section to get you going - we know it is long)!
 
