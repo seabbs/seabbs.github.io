@@ -1573,26 +1573,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="what-is-the-paper-about">What is the paper about?</h2>
 <h3 id="background">Background</h3>
 <ul>
-<li><strong>Importance of accurate distribution estimates:</strong> Key for epidemic modeling and decision-making.</li>
-<li><strong>Right truncation:</strong> Overlooking this leads to underestimated delay during real-time analysis.</li>
-<li><strong>Interval censoring:</strong> When both events that make up a delay are only known down to an interval, double censoring needs attention.</li>
-<li><strong>Dynamical bias:</strong> Similar to demographic changes, affecting observed delay distributions.</li>
-<li><strong>Existing methods:</strong> Methods exist but lack systematic comparison or full bias adjustment.</li>
+<li><em>Importance of accurate distribution estimates:</em> Key for epidemic modeling and decision-making.</li>
+<li><em>Right truncation:</em> Overlooking this leads to underestimated delay during real-time analysis.</li>
+<li><em>Interval censoring:</em> When both events that make up a delay are only known down to an interval, double censoring needs attention.</li>
+<li><em>Dynamical bias:</em> Similar to demographic changes, affecting observed delay distributions.</li>
+<li><em>Existing methods:</em> Methods exist but lack systematic comparison or full bias adjustment.</li>
 </ul>
 <h3 id="what-exactly-did-we-do">What exactly did we do?</h3>
 <ul>
-<li><strong>Theory overview:</strong> Clarifies the theory behind estimating distributions.</li>
-<li><strong>Review of methods:</strong> Examines various methods in light of the theory we have discussed.</li>
-<li><strong>Method evaluation:</strong> Utilizes simulations and data from the Ebola epidemic for method comparison and evaluation.</li>
-<li><strong>Guidance for practice:</strong> Offers cautionary and practical guidance for estimating delays, including future research directions. (<em>Kelly Charniga is leading on a follow-up piece that will be more focused on this as well as offering advice on best practice more generally.</em>).</li>
+<li><em>Theory overview:</em> Clarifies the theory behind estimating distributions.</li>
+<li><em>Review of methods:</em> Examines various methods in light of the theory we have discussed.</li>
+<li><em>Method evaluation:</em> Utilizes simulations and data from the Ebola epidemic for method comparison and evaluation.</li>
+<li><em>Guidance for practice:</em> Offers cautionary and practical guidance for estimating delays, including future research directions. (<em>Kelly Charniga is leading on a follow-up piece that will be more focused on this as well as offering advice on best practice more generally.</em>).</li>
 </ul>
 <h3 id="key-findings">Key Findings</h3>
 <ul>
-<li><strong>Impact of neglecting biases:</strong> Ignoring biases leads to flawed epidemiological estimates in nearly all scenarios.</li>
-<li><strong>Dynamical bias and right truncation:</strong> In a growing epidemic, these biases are nearly equivalent for delays with independent events and can be adjusted for using the same methods (<em>TLDR: Don’t adjust for both in these settings </em>).</li>
-<li><strong>Common censoring adjustment issues:</strong> Naive discretization can cause biased estimates. Many ad-hoc methods exist and often perform poorly.</li>
-<li><strong>Method performance:</strong> Highlights the best performing methods (generally treating primary and secondary events as latent variables and estimating a continuous distribution normalised by the probability of observing the secondary event worked well. See the paper - its simpler than it sounds!) and their limitations.</li>
-<li><strong>Residual biases:</strong> Persist across all methods, especially due to uniform interval distribution assumptions when the delay was short compared to the censoring interval. <em>This is an area of further work!</em></li>
+<li><em>Impact of neglecting biases:</em> Ignoring biases leads to flawed epidemiological estimates in nearly all scenarios.</li>
+<li><em>Dynamical bias and right truncation:</em> In a growing epidemic, these biases are nearly equivalent for delays with independent events and can be adjusted for using the same methods (<em>TLDR: Don’t adjust for both in these settings </em>).</li>
+<li><em>Common censoring adjustment issues:</em> Naive discretization can cause biased estimates. Many ad-hoc methods exist and often perform poorly.</li>
+<li><em>Method performance:</em> Highlights the best performing methods (generally treating primary and secondary events as latent variables and estimating a continuous distribution normalised by the probability of observing the secondary event worked well. See the paper - its simpler than it sounds!) and their limitations.</li>
+<li><em>Residual biases:</em> Persist across all methods, especially due to uniform interval distribution assumptions when the delay was short compared to the censoring interval. <em>This is an area of further work!</em></li>
 </ul>
 <p>Read the <a href="https://www.medrxiv.org/content/10.1101/2024.01.12.24301247v1">paper</a> for more details (there is a summary at the beginning and in every section to get you going - we know it is long)!</p>
 <h2 id="poppy-the-puppy">Poppy the puppy</h2>
