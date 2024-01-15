@@ -1552,6 +1552,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li><a href="#where-can-i-read-it">Where can I read it?</a></li>
 <li><a href="#what-motivated-this-work">What motivated this work?</a></li>
 <li><a href="#what-is-the-paper-about">What is the paper about?</a></li>
+<li><a href="#future-work">Future work</a></li>
 <li><a href="#poppy-the-puppy">Poppy the puppy</a></li>
 </ul>
 </nav>
@@ -1595,6 +1596,14 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li><em>Residual biases:</em> Persist across all methods, especially due to uniform interval distribution assumptions when the delay was short compared to the censoring interval. <em>This is an area of further work!</em></li>
 </ul>
 <p>Read the <a href="https://www.medrxiv.org/content/10.1101/2024.01.12.24301247v1">paper</a> for more details (there is a summary at the beginning and in every section to get you going - we know it is long)!</p>
+<h2 id="future-work">Future work</h2>
+<ul>
+<li>We currently talk about an exact method but don’t evaluate it. In the next version we will do so (early signs show this approach may be impractical for real-world usage as it stands).</li>
+<li>We are working on a follow-up piece that will be more focused on practical guidance for estimating delays, including future research directions.</li>
+<li>We are working on a <a href="https://github.com/epinowcast/epidist">package</a> that implements the methods disscussed in the paper. As all the models in this work are extensions of <a href="https://cran.r-project.org/web/packages/brms/index.html"><code>{brms}</code></a> all of these model can support arbitrary strata and time-varying components - how neat!</li>
+<li>More evaluation of time-varying delays (as above our models support these but we didn’t have time to evaluate them in this paper).</li>
+<li>Exploration of methods for estimating the generation time distribution (the distribution of the time between infection a primary case and infection in a secondary case) - this is a related but distinct problem.</li>
+</ul>
 <h2 id="poppy-the-puppy">Poppy the puppy</h2>
 <p>If I entrapped you with cute puppy pictures then I apologise. Here is another picture of Poppy the puppy to make up for it. She is a 13 week old Lab/Border Collie mix from near Stonehenge. She is very smart, cute, and a serial killer (so we get on well).</p>
 <figure>
