@@ -72,7 +72,7 @@ Read the [paper](https://www.medrxiv.org/content/10.1101/2024.01.12.24301247v1) 
 - We are working on a follow-up piece that will be more focused on practical guidance for estimating delays, including future research directions.
 - We are working on a [package](https://github.com/epinowcast/epidist) that implements the methods disscussed in the paper. As all the models in this work are extensions of [`{brms}`](https://cran.r-project.org/web/packages/brms/index.html) all of these model can support arbitrary strata and  time-varying components - how neat!
 - More evaluation of time-varying delays (as above our models support these but we didn't have time to evaluate them in this paper).
-- Exploration of methods for estimating the generation time distribution (the distribution of the time between infection a primary case and infection in a secondary case) - this is a related but distinct problem.
+- Exploration of methods for estimating the generation time distribution (the distribution of the time between infection of a primary case and infection of a secondary case) - this is a related but distinct problem.
 
 ## Poppy the puppy
 
