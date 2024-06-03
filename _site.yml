@@ -1,0 +1,47 @@
+name: "samabbott.co.uk"
+title: "Sam Abbott"
+theme: css/theme.css
+description: |
+  Links to my tweets, blog, notes, research ideas, code, and papers. 
+output_dir: "_site"
+navbar:
+  logo:
+    image: images/party-hat.jpg
+    href: https://samabbott.co.uk
+  search: false
+  right:
+    - text: "Posts"
+      href: posts.html
+    - text: "Notes"
+      href: https://notes.samabbott.co.uk
+    - text: "Research"
+      href: research.html
+    - text: "Ideas"
+      href: https://github.com/seabbs/seabbs/issues
+    - text: "Code"
+      href: https://github.com/seabbs
+    - text: "Papers"
+      href: https://scholar.google.co.uk/citations?user=GqZm90IAAAAJ
+    - text: "Talks"
+      href: talks.html
+    - text: "About"
+      href: index.html
+    - icon: fab fa-twitter
+      href: https://twitter.com/seabbs
+    - icon: fa fa-rss
+      href: index.xml
+output: 
+  distill::distill_article:
+    includes:
+      in_header:
+      - _includes/utterances.html
+base_url: "https://samabbott.co.uk/"
+repository_url: https://github.com/seabbs/seabbs.github.io
+favicon: images/party-hat.jpg
+create_commons: CC BY
+twitter: 
+  site: "@seabbs"
+collections:
+  posts:
+    share: [twitter]
+    subscribe: _includes/subscribe.html

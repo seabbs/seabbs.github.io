@@ -1,0 +1,15 @@
+---
+title: "Talks"
+description: | 
+  Presentations given by me
+---
+ 
+```{r, echo = FALSE, message = FALSE, results = "asis"}
+path <- tempfile()
+download.file(
+  "https://raw.githubusercontent.com/seabbs/presentations/master/README.md",
+  destfile = path
+)
+res <- knitr::knit_child(path, quiet = TRUE)
+cat(res, sep = '\n')
+```
