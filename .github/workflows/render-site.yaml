@@ -45,7 +45,7 @@ jobs:
     - name: Make a clean gh-pages branch
       run: |
         git checkout --orphan gh-pages
-    - uses: actions/download-artifact@v2
+    - uses: actions/download-artifact@v4.1.7
       with:
         name: website
         path: .
