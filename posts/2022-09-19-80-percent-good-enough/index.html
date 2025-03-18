@@ -1,0 +1,2529 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  { color: #00769e; background-color: #f1f3f5; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span { color: #00769e; } /* Normal */
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { color: #657422; } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #00769e; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #00769e; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #00769e; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+<style>
+  div.csl-bib-body { }
+  div.csl-entry {
+    clear: both;
+    }
+  .hanging div.csl-entry {
+    margin-left:2em;
+    text-indent:-2em;
+  }
+  div.csl-left-margin {
+    min-width:2em;
+    float:left;
+  }
+  div.csl-right-inline {
+    margin-left:2em;
+    padding-left:1em;
+  }
+  div.csl-indent {
+    margin-left: 2em;
+  }
+</style>
+
+  <!--radix_placeholder_meta_tags-->
+<title>Sam Abbott: What is 80% good enough for real-time infectious disease analyses?</title>
+
+<meta property="description" itemprop="description" content="A comment piece exploring what factors led to limitations in some of the work we produced during the COVID-19 pandemic, whether this work was good enough, and some potential ideas for improving future work of a similar kind."/>
+
+<link rel="canonical" href="https://samabbott.co.uk/posts/2022-09-19-80-percent-good-enough/"/>
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/"/>
+<link rel="icon" type="image/jpeg" href="../../images/party-hat.jpg"/>
+
+<!--  https://schema.org/Article -->
+<meta property="article:published" itemprop="datePublished" content="2022-09-19"/>
+<meta property="article:created" itemprop="dateCreated" content="2022-09-19"/>
+<meta name="article:author" content="Sam Abbott"/>
+<meta name="article:author" content="Joel Hellewell"/>
+
+<!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+<meta property="og:title" content="Sam Abbott: What is 80% good enough for real-time infectious disease analyses?"/>
+<meta property="og:type" content="article"/>
+<meta property="og:description" content="A comment piece exploring what factors led to limitations in some of the work we produced during the COVID-19 pandemic, whether this work was good enough, and some potential ideas for improving future work of a similar kind."/>
+<meta property="og:url" content="https://samabbott.co.uk/posts/2022-09-19-80-percent-good-enough/"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:site_name" content="Sam Abbott"/>
+
+<!--  https://dev.twitter.com/cards/types/summary -->
+<meta property="twitter:card" content="summary"/>
+<meta property="twitter:title" content="Sam Abbott: What is 80% good enough for real-time infectious disease analyses?"/>
+<meta property="twitter:description" content="A comment piece exploring what factors led to limitations in some of the work we produced during the COVID-19 pandemic, whether this work was good enough, and some potential ideas for improving future work of a similar kind."/>
+<meta property="twitter:url" content="https://samabbott.co.uk/posts/2022-09-19-80-percent-good-enough/"/>
+<meta property="twitter:site" content="@seabbs"/>
+
+<!--  https://scholar.google.com/intl/en/scholar/inclusion.html#indexing -->
+<meta name="citation_title" content="Sam Abbott: What is 80% good enough for real-time infectious disease analyses?"/>
+<meta name="citation_fulltext_html_url" content="https://samabbott.co.uk/posts/2022-09-19-80-percent-good-enough/"/>
+<meta name="citation_fulltext_world_readable" content=""/>
+<meta name="citation_online_date" content="2022/09/19"/>
+<meta name="citation_publication_date" content="2022/09/19"/>
+<meta name="citation_author" content="Sam Abbott"/>
+<meta name="citation_author" content="Joel Hellewell"/>
+<!--/radix_placeholder_meta_tags-->
+  
+  <meta name="citation_reference" content="citation_title=Estimated transmissibility and impact of SARS-CoV-2 lineage B.1.1.7 in England;citation_publisher=American Association for the Advancement of Science (AAAS);citation_volume=372;citation_doi=10.1126/science.abg3055;citation_issn=0036-8075;citation_author=Nicholas G. Davies;citation_author=Sam Abbott;citation_author=Rosanna C. Barnard;citation_author=Christopher I. Jarvis;citation_author=Adam J. Kucharski;citation_author=James D. Munday;citation_author=Carl A. B. Pearson;citation_author=Timothy W. Russell;citation_author=Damien C. Tully;citation_author=Alex D. Washburne;citation_author=Tom Wenseleers;citation_author=Amy Gimma;citation_author=William Waites;citation_author=Kerry L. M. Wong;citation_author=Kevin Zandvoort;citation_author=Justin D. Silverman;citation_author=Karla Diaz-Ordaz;citation_author=Ruth Keogh;citation_author=Rosalind M. Eggo;citation_author=Sebastian Funk;citation_author=Mark Jit;citation_author=Katherine E. Atkins;citation_author=W. John Edmunds"/>
+  <meta name="citation_reference" content="citation_title=Estimating the time-varying reproduction number of SARS-CoV-2 using national and subnational case counts [version 1];citation_publisher=F1000 Research Ltd;citation_volume=5;citation_doi=10.12688/wellcomeopenres.16006.1;citation_issn=2398-502X;citation_author=Sam Abbott;citation_author=Joel Hellewell;citation_author=Robin N. Thompson;citation_author=Katharine Sherratt;citation_author=Hamish P. Gibbs;citation_author=Nikos I. Bosse;citation_author=James D. Munday;citation_author=Sophie Meakin;citation_author=Emma L. Doughty;citation_author=June Young Chun;citation_author=Yung-Wai Desmond Chan;citation_author=Flavio Finger;citation_author=Paul Campbell;citation_author=Akira Endo;citation_author=Carl A. B. Pearson;citation_author=Amy Gimma;citation_author=Tim Russell;citation_author=Stefan Flasche;citation_author=Adam J. Kucharski;citation_author=Rosalind M. Eggo;citation_author=Sebastian Funk"/>
+  <meta name="citation_reference" content="citation_title=Estimating the time-varying reproduction number of SARS-CoV-2 using national and subnational case counts [version 2];citation_publisher=F1000 Research Ltd;citation_volume=5;citation_doi=10.12688/wellcomeopenres.16006.2;citation_issn=2398-502X;citation_author=Sam Abbott;citation_author=Joel Hellewell;citation_author=Robin N. Thompson;citation_author=Katharine Sherratt;citation_author=Hamish P. Gibbs;citation_author=Nikos I. Bosse;citation_author=James D. Munday;citation_author=Sophie Meakin;citation_author=Emma L. Doughty;citation_author=June Young Chun;citation_author=Yung-Wai Desmond Chan;citation_author=Flavio Finger;citation_author=Paul Campbell;citation_author=Akira Endo;citation_author=Carl A. B. Pearson;citation_author=Amy Gimma;citation_author=Tim Russell;citation_author=Stefan Flasche;citation_author=Adam J. Kucharski;citation_author=Rosalind M. Eggo;citation_author=Sebastian Funk"/>
+  <meta name="citation_reference" content="citation_title=Practical considerations for measuring the effective reproductive number, Rt;citation_volume=16;citation_doi=10.1371/journal.pcbi.1008409;citation_issn=1553-7358;citation_author=Katelyn M. Gostic;citation_author=Lauren McGough;citation_author=Edward B. Baskerville;citation_author=Sam Abbott;citation_author=Keya Joshi;citation_author=Christine Tedijanto;citation_author=Rebecca Kahn;citation_author=Rene Niehus;citation_author=James A. Hay;citation_author=Pablo M. De Salazar;citation_author=Joel Hellewell;citation_author=Sophie Meakin;citation_author=James D. Munday;citation_author=Nikos I. Bosse;citation_author=Katharine Sherrat;citation_author=Robin N. Thompson;citation_author=Laura F. White;citation_author=Jana S. Huisman;citation_author=Jérémie Scire;citation_author=Sebastian Bonhoeffer;citation_author=Tanja Stadler;citation_author=Jacco Wallinga;citation_author=Sebastian Funk;citation_author=Marc Lipsitch;citation_author=Sarah Cobey"/>
+  <meta name="citation_reference" content="citation_title=The COVID-19 response illustrates that traditional academic reward structures and metrics do not reflect crucial contributions to modern science;citation_volume=18;citation_doi=10.1371/journal.pbio.3000913;citation_issn=1545-7885;citation_author=Adam J. Kucharski;citation_author=Sebastian Funk;citation_author=Rosalind M. Eggo"/>
+  <meta name="citation_reference" content="citation_title=What makes an academic paper useful for health policy?;citation_volume=13;citation_doi=10.1186/s12916-015-0544-8;citation_issn=1741-7015;citation_author=Christopher J. M. Whitty"/>
+  <meta name="citation_reference" content="citation_title=Modelling that shaped the early COVID-19 pandemic response in the UK;citation_volume=376;citation_doi=10.1098/rstb.2021.0001;citation_author=Ellen Brooks-Pollock;citation_author=Leon Danon;citation_author=Thibaut Jombart;citation_author=Lorenzo Pellis"/>
+  <meta name="citation_reference" content="citation_title=Short-term forecasts to inform the response to the Covid-19 epidemic in the UK;citation_doi=10.1101/2020.11.11.20220962;citation_author=S. Funk;citation_author=S. Abbott;citation_author=B. D. Atkins;citation_author=M. Baguelin;citation_author=J. K. Baillie;citation_author=P. Birrell;citation_author=J. Blake;citation_author=N. I. Bosse;citation_author=J. Burton;citation_author=J. Carruthers;citation_author=N. G. Davies;citation_author=D. De Angelis;citation_author=L. Dyson;citation_author=W. J. Edmunds;citation_author=R. M. Eggo;citation_author=N. M. Ferguson;citation_author=K. Gaythorpe;citation_author=E. Gorsich;citation_author=G. Guyver-Fletcher;citation_author=J. Hellewell;citation_author=E. M. Hill;citation_author=A. Holmes;citation_author=T. A. House;citation_author=C. Jewell;citation_author=M. Jit;citation_author=T. Jombart;citation_author=I. Joshi;citation_author=M. J. Keeling;citation_author=E. Kendall;citation_author=E. S. Knock;citation_author=A. J. Kucharski;citation_author=K. A. Lythgoe;citation_author=S. R. Meakin;citation_author=J. D. Munday;citation_author=P. J. M. Openshaw;citation_author=C. E. Overton;citation_author=F. Pagani;citation_author=J. Pearson;citation_author=P. N. Perez-Guzman;citation_author=L. Pellis;citation_author=F. Scarabel;citation_author=M. G. Semple;citation_author=K. Sherratt;citation_author=M. Tang;citation_author=M. J. Tildesley;citation_author=E. Van Leeuwen;citation_author=L. K. Whittles;citation_author=CMMID COVID-19 Working Group;citation_author=Imperial College COVID-19 Response Team;citation_author=Isaric4c Investigators"/>
+  <meta name="citation_reference" content="citation_title=Exploring surveillance data biases when estimating the reproduction number: With insights into subpopulation transmission of COVID-19 in England;citation_volume=376;citation_doi=10.1098/rstb.2020.0283;citation_author=Katharine Sherratt;citation_author=Sam Abbott;citation_author=Sophie R. Meakin;citation_author=Joel Hellewell;citation_author=James D. Munday;citation_author=Nikos Bosse;citation_author=null null;citation_author=Mark Jit;citation_author=Sebastian Funk"/>
+  <meta name="citation_reference" content="citation_title=Estimating the increase in reproduction number associated with the Delta variant using local area dynamics in England;citation_publisher=Epiforecasts;citation_author=Sam Abbott;citation_author=Adam J. Kucharski;citation_author=Sebastian Funk"/>
+  <meta name="citation_reference" content="citation_title=Accounting for uncertainty during a pandemic;citation_volume=2;citation_doi=10.1016/j.patter.2021.100310;citation_author=Jon Zelner;citation_author=Julien Riou;citation_author=Ruth Etzioni;citation_author=Andrew Gelman"/>
+  <meta name="citation_reference" content="citation_title=covid19.sgene.utla.rt: Recast to a non-linear model;citation_author=Sam Abbott;citation_author=Sebastian Funk"/>
+  <meta name="citation_reference" content="citation_title=EpiForecasts - reflections on two years estimating effective reproduction numbers;citation_publisher=https://epiforecasts.io/posts/2022-03-25-rt-reflections/#an-attempt-to-design-a-useful-resource-for-situational-awareness;citation_author=Sam Abbott;citation_author=Sebastian Funk"/>
+  <meta name="citation_reference" content="citation_title=Welcome to the epinowcast community;citation_publisher=https://www.epinowcast.org/"/>
+  <meta name="citation_reference" content="citation_title=The transmissibility of novel coronavirus in the early stages of the 2019-20 outbreak in wuhan: Exploring initial point-source exposure sizes and durations using scenario analysis;citation_volume=5;citation_doi=10.12688/wellcomeopenres.15718.1;citation_issn=2398-502X;citation_author=Sam Abbott;citation_author=Joel Hellewell;citation_author=James Munday;citation_author=Sebastian Funk;citation_author=The transmissibility of novel coronavirus in the early stages of the 2019-20 outbreak in wuhan: Exploring initial point-source exposure sizes and durations using scenario analysis"/>
+  <meta name="citation_reference" content="citation_title=EpiNow2: Estimate real-time case counts and time-varying epidemiological parameters;citation_doi=10.5281/zenodo.3957489;citation_author=Sam Abbott;citation_author=Joel Hellewell;citation_author=Katharine Sherratt;citation_author=Katelyn Gostic;citation_author=Joe Hickson;citation_author=Hamada S. Badr;citation_author=Michael DeWitt;citation_author=Robin Thompson;citation_author=Sebastian Funk;citation_author=EpiNow2: Estimate real-time case counts and time-varying epidemiological parameters"/>
+  <meta name="citation_reference" content="citation_title=EpiEstim v2.2-3: A tool to estimate time varying instantaneous reproduction number during epidemics;citation_publisher=https://github.com/mrc-ide/EpiEstim; GitHub;citation_author=A Cori;citation_author=ZN Kamvar;citation_author=J Stockwin;citation_author=T Jombart;citation_author=E Dahlqwist;citation_author=R FitzJohn;citation_author=R Thompson"/>
+  <meta name="citation_reference" content="citation_title=Monitoring count time series in R: Aberration detection in public health surveillance;citation_volume=70;citation_doi=10.18637/jss.v070.i10;citation_author=Maëlle Salmon;citation_author=Dirk Schumacher;citation_author=Michael Höhle"/>
+  <meta name="citation_reference" content="citation_title=Spatio-temporal analysis of epidemic phenomena using the R package surveillance;citation_volume=77;citation_doi=10.18637/jss.v077.i11;citation_author=Sebastian Meyer;citation_author=Leonhard Held;citation_author=Michael Höhle"/>
+  <meta name="citation_reference" content="citation_title=R epidemics consortium;citation_publisher=https://www.repidemicsconsortium.org/;citation_author=R epidemics consortium"/>
+  <meta name="citation_reference" content="citation_title=How can mathematical and statistical models combine with big data to improve our response to pandemics?;citation_publisher=https://www.lshtm.ac.uk/newsevents/events/how-can-mathematical-and-statistical-models-combine-big-data-improve-our-response;citation_author=Sir Chris Whitty;citation_author=Dame Angela McLean"/>
+  <!--radix_placeholder_rmarkdown_metadata-->
+
+<script type="text/json" id="radix-rmarkdown-metadata">
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","bibliography","description","author","date","creative_commons","cite","image","output","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["What is 80% good enough for real-time infectious disease analyses?"]},{"type":"character","attributes":{},"value":["library.bib"]},{"type":"character","attributes":{},"value":["A comment piece exploring what factors led to limitations in some of the work we produced during the COVID-19 pandemic, whether this work was good enough, and some potential ideas for improving future work of a similar kind."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Sam Abbott"]},{"type":"character","attributes":{},"value":["https://samabbott.co.uk"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Joel Hellewell"]},{"type":"character","attributes":{},"value":["https://jhellewell14.github.io/"]}]}]},{"type":"character","attributes":{},"value":["2022-09-19"]},{"type":"character","attributes":{},"value":["CC BY"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["80-good-enough.png"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]}]}]},{"type":"character","attributes":{},"value":["https://samabbott.co.uk/posts/2022-09-19-80-percent-good-enough/"]},{"type":"character","attributes":{},"value":["https://samabbott.co.uk/posts/2022-09-19-80-percent-good-enough/"]}]}
+</script>
+<!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["80-good-enough.pdf","80-good-enough.png","library.bib","renv.lock"]}
+  </script>
+  <!--radix_placeholder_navigation_in_header-->
+<meta name="distill:offset" content="../.."/>
+
+<script type="application/javascript">
+
+  window.headroom_prevent_pin = false;
+
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+
+    // initialize headroom for banner
+    var header = $('header').get(0);
+    var headerHeight = header.offsetHeight;
+    var headroom = new Headroom(header, {
+      tolerance: 5,
+      onPin : function() {
+        if (window.headroom_prevent_pin) {
+          window.headroom_prevent_pin = false;
+          headroom.unpin();
+        }
+      }
+    });
+    headroom.init();
+    if(window.location.hash)
+      headroom.unpin();
+    $(header).addClass('headroom--transition');
+
+    // offset scroll location for banner on hash change
+    // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
+    window.addEventListener("hashchange", function(event) {
+      window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
+    });
+
+    // responsive menu
+    $('.distill-site-header').each(function(i, val) {
+      var topnav = $(this);
+      var toggle = topnav.find('.nav-toggle');
+      toggle.on('click', function() {
+        topnav.toggleClass('responsive');
+      });
+    });
+
+    // nav dropdowns
+    $('.nav-dropbtn').click(function(e) {
+      $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
+      $(this).parent().siblings('.nav-dropdown')
+         .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
+    });
+    $("body").click(function(e){
+      $('.nav-dropdown-content').removeClass('nav-dropdown-active');
+    });
+    $(".nav-dropdown").click(function(e){
+      e.stopPropagation();
+    });
+  });
+</script>
+
+<style type="text/css">
+
+/* Theme (user-documented overrideables for nav appearance) */
+
+.distill-site-nav {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #0F2E3D;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.distill-site-nav a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.distill-site-nav a:hover {
+  color: white;
+}
+
+@media print {
+  .distill-site-nav {
+    display: none;
+  }
+}
+
+.distill-site-header {
+
+}
+
+.distill-site-footer {
+
+}
+
+
+/* Site Header */
+
+.distill-site-header {
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 3;
+}
+
+.distill-site-header .nav-left {
+  display: inline-block;
+  margin-left: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .distill-site-header .nav-left {
+    margin-left: 0;
+  }
+}
+
+
+.distill-site-header .nav-right {
+  float: right;
+  margin-right: 8px;
+}
+
+.distill-site-header a,
+.distill-site-header .title {
+  display: inline-block;
+  text-align: center;
+  padding: 14px 10px 14px 10px;
+}
+
+.distill-site-header .title {
+  font-size: 18px;
+  min-width: 150px;
+}
+
+.distill-site-header .logo {
+  padding: 0;
+}
+
+.distill-site-header .logo img {
+  display: none;
+  max-height: 20px;
+  width: auto;
+  margin-bottom: -4px;
+}
+
+.distill-site-header .nav-image img {
+  max-height: 18px;
+  width: auto;
+  display: inline-block;
+  margin-bottom: -3px;
+}
+
+
+
+@media screen and (min-width: 1000px) {
+  .distill-site-header .logo img {
+    display: inline-block;
+  }
+  .distill-site-header .nav-left {
+    margin-left: 20px;
+  }
+  .distill-site-header .nav-right {
+    margin-right: 20px;
+  }
+  .distill-site-header .title {
+    padding-left: 12px;
+  }
+}
+
+
+.distill-site-header .nav-toggle {
+  display: none;
+}
+
+.nav-dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.nav-dropdown .nav-dropbtn {
+  border: none;
+  outline: none;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 16px 10px;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+  margin-top: 1px;
+  z-index: 2;
+}
+
+.nav-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 200px;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 4px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+  z-index: 1;
+  margin-top: 2px;
+  white-space: nowrap;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.nav-dropdown-content hr {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.nav-dropdown-active {
+  display: block;
+}
+
+.nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
+  color: black;
+  padding: 6px 24px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.nav-dropdown-content .nav-dropdown-header {
+  display: block;
+  padding: 5px 24px;
+  padding-bottom: 0;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #999999;
+  white-space: nowrap;
+}
+
+.nav-dropdown:hover .nav-dropbtn {
+  color: white;
+}
+
+.nav-dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.nav-right .nav-dropdown-content {
+  margin-left: -45%;
+  right: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
+  .distill-site-header a.nav-toggle {
+    float: right;
+    display: block;
+  }
+  .distill-site-header .title {
+    margin-left: 0;
+  }
+  .distill-site-header .nav-right {
+    margin-right: 0;
+  }
+  .distill-site-header {
+    overflow: hidden;
+  }
+  .nav-right .nav-dropdown-content {
+    margin-left: 0;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .distill-site-header.responsive {position: relative; min-height: 500px; }
+  .distill-site-header.responsive a.nav-toggle {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .distill-site-header.responsive a,
+  .distill-site-header.responsive .nav-dropdown {
+    display: block;
+    text-align: left;
+  }
+  .distill-site-header.responsive .nav-left,
+  .distill-site-header.responsive .nav-right {
+    width: 100%;
+  }
+  .distill-site-header.responsive .nav-dropdown {float: none;}
+  .distill-site-header.responsive .nav-dropdown-content {position: relative;}
+  .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* Site Footer */
+
+.distill-site-footer {
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  z-index: 3;
+  margin-top: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+/* Headroom */
+
+d-title {
+  padding-top: 6rem;
+}
+
+@media print {
+  d-title {
+    padding-top: 4rem;
+  }
+}
+
+.headroom {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.headroom--transition {
+  transition: all .4s ease-in-out;
+}
+
+.headroom--unpinned {
+  top: -100px;
+}
+
+.headroom--pinned {
+  top: 0;
+}
+
+/* adjust viewport for navbar height */
+/* helps vertically center bootstrap (non-distill) content */
+.min-vh-100 {
+  min-height: calc(100vh - 100px) !important;
+}
+
+</style>
+
+<script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="../../site_libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet"/>
+<link href="../../site_libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet"/>
+<script src="../../site_libs/headroom-0.9.4/headroom.min.js"></script>
+<!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+
+<style type="text/css">
+
+body {
+  background-color: white;
+}
+
+.pandoc-table {
+  width: 100%;
+}
+
+.pandoc-table>caption {
+  margin-bottom: 10px;
+}
+
+.pandoc-table th:not([align]) {
+  text-align: left;
+}
+
+.pagedtable-footer {
+  font-size: 15px;
+}
+
+d-byline .byline {
+  grid-template-columns: 2fr 2fr;
+}
+
+d-byline .byline h3 {
+  margin-block-start: 1.5em;
+}
+
+d-byline .byline .authors-affiliations h3 {
+  margin-block-start: 0.5em;
+}
+
+.authors-affiliations .orcid-id {
+  width: 16px;
+  height:16px;
+  margin-left: 4px;
+  margin-right: 4px;
+  vertical-align: middle;
+  padding-bottom: 2px;
+}
+
+d-title .dt-tags {
+  margin-top: 1em;
+  grid-column: text;
+}
+
+.dt-tags .dt-tag {
+  text-decoration: none;
+  display: inline-block;
+  color: rgba(0,0,0,0.6);
+  padding: 0em 0.4em;
+  margin-right: 0.5em;
+  margin-bottom: 0.4em;
+  font-size: 70%;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+d-article table.gt_table td,
+d-article table.gt_table th {
+  border-bottom: none;
+  font-size: 100%;
+}
+
+.html-widget {
+  margin-bottom: 2.0em;
+}
+
+.l-screen-inset {
+  padding-right: 16px;
+}
+
+.l-screen .caption {
+  margin-left: 10px;
+}
+
+.shaded {
+  background: rgb(247, 247, 247);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.shaded .html-widget {
+  margin-bottom: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.shaded .shaded-content {
+  background: white;
+}
+
+.text-output {
+  margin-top: 0;
+  line-height: 1.5em;
+}
+
+.hidden {
+  display: none !important;
+}
+
+hr.section-separator {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 0px;
+}
+
+
+d-byline {
+  border-top: none;
+}
+
+d-article {
+  padding-top: 2.5rem;
+  padding-bottom: 30px;
+  border-top: none;
+}
+
+d-appendix {
+  padding-top: 30px;
+}
+
+d-article>p>img {
+  width: 100%;
+}
+
+d-article h2 {
+  margin: 1rem 0 1.5rem 0;
+}
+
+d-article h3 {
+  margin-top: 1.5rem;
+}
+
+d-article iframe {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 2.0em;
+  width: 100%;
+}
+
+/* Tweak code blocks */
+
+d-article div.sourceCode code,
+d-article pre code {
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+
+d-article pre,
+d-article div.sourceCode,
+d-article div.sourceCode pre {
+  overflow: auto;
+}
+
+d-article div.sourceCode {
+  background-color: white;
+}
+
+d-article div.sourceCode pre {
+  padding-left: 10px;
+  font-size: 12px;
+  border-left: 2px solid rgba(0,0,0,0.1);
+}
+
+d-article pre {
+  font-size: 12px;
+  color: black;
+  background: none;
+  margin-top: 0;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+d-article pre a {
+  border-bottom: none;
+}
+
+d-article pre a:hover {
+  border-bottom: none;
+  text-decoration: underline;
+}
+
+d-article details {
+  grid-column: text;
+  margin-bottom: 0.8em;
+}
+
+@media(min-width: 768px) {
+
+d-article pre,
+d-article div.sourceCode,
+d-article div.sourceCode pre {
+  overflow: visible !important;
+}
+
+d-article div.sourceCode pre {
+  padding-left: 18px;
+  font-size: 14px;
+}
+
+/* tweak for Pandoc numbered line within distill */
+d-article pre.numberSource code > span {
+    left: -2em;
+}
+
+d-article pre {
+  font-size: 14px;
+}
+
+}
+
+figure img.external {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+/* CSS for d-contents */
+
+.d-contents {
+  grid-column: text;
+  color: rgba(0,0,0,0.8);
+  font-size: 0.9em;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+  margin-bottom: 1em;
+  padding-left: 0.25em;
+  justify-self: start;
+}
+
+@media(min-width: 1000px) {
+  .d-contents.d-contents-float {
+    height: 0;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    justify-self: center;
+    padding-right: 3em;
+    padding-left: 2em;
+  }
+}
+
+.d-contents nav h3 {
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+.d-contents li {
+  list-style-type: none
+}
+
+.d-contents nav > ul {
+  padding-left: 0;
+}
+
+.d-contents ul {
+  padding-left: 1em
+}
+
+.d-contents nav ul li {
+  margin-top: 0.6em;
+  margin-bottom: 0.2em;
+}
+
+.d-contents nav a {
+  font-size: 13px;
+  border-bottom: none;
+  text-decoration: none
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.d-contents nav a:hover {
+  text-decoration: underline solid rgba(0, 0, 0, 0.6)
+}
+
+.d-contents nav > ul > li > a {
+  font-weight: 600;
+}
+
+.d-contents nav > ul > li > ul {
+  font-weight: inherit;
+}
+
+.d-contents nav > ul > li > ul > li {
+  margin-top: 0.2em;
+}
+
+
+.d-contents nav ul {
+  margin-top: 0;
+  margin-bottom: 0.25em;
+}
+
+.d-article-with-toc h2:nth-child(2) {
+  margin-top: 0;
+}
+
+
+/* Figure */
+
+.figure {
+  position: relative;
+  margin-bottom: 2.5em;
+  margin-top: 1.5em;
+}
+
+.figure .caption {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 12px;
+  line-height: 1.5em;
+}
+
+.figure img.external {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+.figure .caption a {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.figure .caption b,
+.figure .caption strong, {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 1.0);
+}
+
+/* Citations */
+
+d-article .citation {
+  color: inherit;
+  cursor: inherit;
+}
+
+div.hanging-indent{
+  margin-left: 1em; text-indent: -1em;
+}
+
+/* Citation hover box */
+
+.tippy-box[data-theme~=light-border] {
+  background-color: rgba(250, 250, 250, 0.95);
+}
+
+.tippy-content > p {
+  margin-bottom: 0;
+  padding: 2px;
+}
+
+
+/* Tweak 1000px media break to show more text */
+
+@media(min-width: 1000px) {
+  .base-grid,
+  distill-header,
+  d-title,
+  d-abstract,
+  d-article,
+  d-appendix,
+  distill-appendix,
+  d-byline,
+  d-footnote-list,
+  d-citation-list,
+  distill-footer {
+    grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+    grid-column-gap: 16px;
+  }
+
+  .grid {
+    grid-column-gap: 16px;
+  }
+
+  d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+  }
+  figure .caption, .figure .caption, figure figcaption {
+    font-size: 13px;
+  }
+}
+
+@media(min-width: 1180px) {
+  .base-grid,
+  distill-header,
+  d-title,
+  d-abstract,
+  d-article,
+  d-appendix,
+  distill-appendix,
+  d-byline,
+  d-footnote-list,
+  d-citation-list,
+  distill-footer {
+    grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+    grid-column-gap: 32px;
+  }
+
+  .grid {
+    grid-column-gap: 32px;
+  }
+}
+
+
+/* Get the citation styles for the appendix (not auto-injected on render since
+   we do our own rendering of the citation appendix) */
+
+d-appendix .citation-appendix,
+.d-appendix .citation-appendix {
+  font-size: 11px;
+  line-height: 15px;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  padding-left: 18px;
+  border: 1px solid rgba(0,0,0,0.1);
+  background: rgba(0, 0, 0, 0.02);
+  padding: 10px 18px;
+  border-radius: 3px;
+  color: rgba(150, 150, 150, 1);
+  overflow: hidden;
+  margin-top: -12px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Include appendix styles here so they can be overridden */
+
+d-appendix {
+  contain: layout style;
+  font-size: 0.8em;
+  line-height: 1.7em;
+  margin-top: 60px;
+  margin-bottom: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  color: rgba(0,0,0,0.5);
+  padding-top: 60px;
+  padding-bottom: 48px;
+}
+
+d-appendix h3 {
+  grid-column: page-start / text-start;
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 1em;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.65);
+}
+
+d-appendix h3 + * {
+  margin-top: 1em;
+}
+
+d-appendix ol {
+  padding: 0 0 0 15px;
+}
+
+@media (min-width: 768px) {
+  d-appendix ol {
+    padding: 0 0 0 30px;
+    margin-left: -30px;
+  }
+}
+
+d-appendix li {
+  margin-bottom: 1em;
+}
+
+d-appendix a {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+d-appendix > * {
+  grid-column: text;
+}
+
+d-appendix > d-footnote-list,
+d-appendix > d-citation-list,
+d-appendix > distill-appendix {
+  grid-column: screen;
+}
+
+/* Include footnote styles here so they can be overridden */
+
+d-footnote-list {
+  contain: layout style;
+}
+
+d-footnote-list > * {
+  grid-column: text;
+}
+
+d-footnote-list a.footnote-backlink {
+  color: rgba(0,0,0,0.3);
+  padding-left: 0.5em;
+}
+
+
+
+/* Anchor.js */
+
+.anchorjs-link {
+  /*transition: all .25s linear; */
+  text-decoration: none;
+  border-bottom: none;
+}
+*:hover > .anchorjs-link {
+  margin-left: -1.125em !important;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+/* Social footer */
+
+.social_footer {
+  margin-top: 30px;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.67);
+}
+
+.disqus-comments {
+  margin-right: 30px;
+}
+
+.disqus-comment-count {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+#disqus_thread {
+  margin-top: 30px;
+}
+
+.article-sharing a {
+  border-bottom: none;
+  margin-right: 8px;
+}
+
+.article-sharing a:hover {
+  border-bottom: none;
+}
+
+.sidebar-section.subscribe {
+  font-size: 12px;
+  line-height: 1.6em;
+}
+
+.subscribe p {
+  margin-bottom: 0.5em;
+}
+
+
+.article-footer .subscribe {
+  font-size: 15px;
+  margin-top: 45px;
+}
+
+
+.sidebar-section.custom {
+  font-size: 12px;
+  line-height: 1.6em;
+}
+
+.custom p {
+  margin-bottom: 0.5em;
+}
+
+/* Styles for listing layout (hide title) */
+.layout-listing d-title, .layout-listing .d-title {
+  display: none;
+}
+
+/* Styles for posts lists (not auto-injected) */
+
+
+.posts-with-sidebar {
+  padding-left: 45px;
+  padding-right: 45px;
+}
+
+.posts-list .description h2,
+.posts-list .description p {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+.posts-list .description h2 {
+  font-weight: 700;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.posts-list h2.post-tag {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 12px;
+}
+.posts-list {
+  margin-top: 60px;
+  margin-bottom: 24px;
+}
+
+.posts-list .post-preview {
+  text-decoration: none;
+  overflow: hidden;
+  display: block;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 24px 0;
+}
+
+.post-preview-last {
+  border-bottom: none !important;
+}
+
+.posts-list .posts-list-caption {
+  grid-column: screen;
+  font-weight: 400;
+}
+
+.posts-list .post-preview h2 {
+  margin: 0 0 6px 0;
+  line-height: 1.2em;
+  font-style: normal;
+  font-size: 24px;
+}
+
+.posts-list .post-preview p {
+  margin: 0 0 12px 0;
+  line-height: 1.4em;
+  font-size: 16px;
+}
+
+.posts-list .post-preview .thumbnail {
+  box-sizing: border-box;
+  margin-bottom: 24px;
+  position: relative;
+  max-width: 500px;
+}
+.posts-list .post-preview img {
+  width: 100%;
+  display: block;
+}
+
+.posts-list .metadata {
+  font-size: 12px;
+  line-height: 1.4em;
+  margin-bottom: 18px;
+}
+
+.posts-list .metadata > * {
+  display: inline-block;
+}
+
+.posts-list .metadata .publishedDate {
+  margin-right: 2em;
+}
+
+.posts-list .metadata .dt-authors {
+  display: block;
+  margin-top: 0.3em;
+  margin-right: 2em;
+}
+
+.posts-list .dt-tags {
+  display: block;
+  line-height: 1em;
+}
+
+.posts-list .dt-tags .dt-tag {
+  display: inline-block;
+  color: rgba(0,0,0,0.6);
+  padding: 0.3em 0.4em;
+  margin-right: 0.2em;
+  margin-bottom: 0.4em;
+  font-size: 60%;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.posts-list img {
+  opacity: 1;
+}
+
+.posts-list img[data-src] {
+  opacity: 0;
+}
+
+.posts-more {
+  clear: both;
+}
+
+
+.posts-sidebar {
+  font-size: 16px;
+}
+
+.posts-sidebar h3 {
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.sidebar-section {
+  margin-bottom: 30px;
+}
+
+.categories ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.categories li {
+  color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 0;
+}
+
+.categories li>a {
+  border-bottom: none;
+}
+
+.categories li>a:hover {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.categories .active {
+  font-weight: 600;
+}
+
+.categories .category-count {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+
+@media(min-width: 768px) {
+  .posts-list .post-preview h2 {
+    font-size: 26px;
+  }
+  .posts-list .post-preview .thumbnail {
+    float: right;
+    width: 30%;
+    margin-bottom: 0;
+  }
+  .posts-list .post-preview .description {
+    float: left;
+    width: 45%;
+  }
+  .posts-list .post-preview .metadata {
+    float: left;
+    width: 20%;
+    margin-top: 8px;
+  }
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.5em;
+    font-size: 16px;
+  }
+  .posts-with-sidebar .posts-list {
+    float: left;
+    width: 75%;
+  }
+  .posts-with-sidebar .posts-sidebar {
+    float: right;
+    width: 20%;
+    margin-top: 60px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+}
+
+
+/* Improve display for browsers without grid (IE/Edge <= 15) */
+
+.downlevel {
+  line-height: 1.6em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+}
+
+.downlevel .d-title {
+  padding-top: 6rem;
+  padding-bottom: 1.5rem;
+}
+
+.downlevel .d-title h1 {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.1em;
+  margin: 0 0 0.5rem;
+}
+
+.downlevel .d-title p {
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 1.55em;
+  margin-top: 0;
+}
+
+.downlevel .d-byline {
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  font-size: 0.8rem;
+  line-height: 1.8em;
+}
+
+.downlevel .section-separator {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.downlevel .d-article {
+  font-size: 1.06rem;
+  line-height: 1.7em;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+
+.downlevel .d-appendix {
+  padding-left: 0;
+  padding-right: 0;
+  max-width: none;
+  font-size: 0.8em;
+  line-height: 1.7em;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.5);
+  padding-top: 40px;
+  padding-bottom: 48px;
+}
+
+.downlevel .footnotes ol {
+  padding-left: 13px;
+}
+
+.downlevel .base-grid,
+.downlevel .distill-header,
+.downlevel .d-title,
+.downlevel .d-abstract,
+.downlevel .d-article,
+.downlevel .d-appendix,
+.downlevel .distill-appendix,
+.downlevel .d-byline,
+.downlevel .d-footnote-list,
+.downlevel .d-citation-list,
+.downlevel .distill-footer,
+.downlevel .appendix-bottom,
+.downlevel .posts-container {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+@media(min-width: 768px) {
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+  padding-left: 150px;
+  padding-right: 150px;
+  max-width: 900px;
+}
+}
+
+.downlevel pre code {
+  display: block;
+  border-left: 2px solid rgba(0, 0, 0, .1);
+  padding: 0 0 0 20px;
+  font-size: 14px;
+}
+
+.downlevel code, .downlevel pre {
+  color: black;
+  background: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+.downlevel .posts-list .post-preview {
+  color: inherit;
+}
+
+
+
+</style>
+
+<script type="application/javascript">
+
+function is_downlevel_browser() {
+  if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                 window.navigator.userAgent)) {
+    return true;
+  } else {
+    return window.load_distill_framework === undefined;
+  }
+}
+
+// show body when load is complete
+function on_load_complete() {
+
+  // add anchors
+  if (window.anchors) {
+    window.anchors.options.placement = 'left';
+    window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+  }
+
+
+  // set body to visible
+  document.body.style.visibility = 'visible';
+
+  // force redraw for leaflet widgets
+  if (window.HTMLWidgets) {
+    var maps = window.HTMLWidgets.findAll(".leaflet");
+    $.each(maps, function(i, el) {
+      var map = this.getMap();
+      map.invalidateSize();
+      map.eachLayer(function(layer) {
+        if (layer instanceof L.TileLayer)
+          layer.redraw();
+      });
+    });
+  }
+
+  // trigger 'shown' so htmlwidgets resize
+  $('d-article').trigger('shown');
+}
+
+function init_distill() {
+
+  init_common();
+
+  // create front matter
+  var front_matter = $('<d-front-matter></d-front-matter>');
+  $('#distill-front-matter').wrap(front_matter);
+
+  // create d-title
+  $('.d-title').changeElementType('d-title');
+
+  // separator
+  var separator = '<hr class="section-separator" style="clear: both"/>';
+  // prepend separator above appendix
+  $('.d-byline').before(separator);
+  $('.d-article').before(separator);
+
+  // create d-byline
+  var byline = $('<d-byline></d-byline>');
+  $('.d-byline').replaceWith(byline);
+
+  // create d-article
+  var article = $('<d-article></d-article>');
+  $('.d-article').wrap(article).children().unwrap();
+
+  // move posts container into article
+  $('.posts-container').appendTo($('d-article'));
+
+  // create d-appendix
+  $('.d-appendix').changeElementType('d-appendix');
+
+  // flag indicating that we have appendix items
+  var appendix = $('.appendix-bottom').children('h3').length > 0;
+
+  // replace footnotes with <d-footnote>
+  $('.footnote-ref').each(function(i, val) {
+    appendix = true;
+    var href = $(this).attr('href');
+    var id = href.replace('#', '');
+    var fn = $('#' + id);
+    var fn_p = $('#' + id + '>p');
+    fn_p.find('.footnote-back').remove();
+    var text = fn_p.html();
+    var dtfn = $('<d-footnote></d-footnote>');
+    dtfn.html(text);
+    $(this).replaceWith(dtfn);
+  });
+  // remove footnotes
+  $('.footnotes').remove();
+
+  // move refs into #references-listing
+  $('#references-listing').replaceWith($('#refs'));
+
+  $('h1.appendix, h2.appendix').each(function(i, val) {
+    $(this).changeElementType('h3');
+  });
+  $('h3.appendix').each(function(i, val) {
+    var id = $(this).attr('id');
+    $('.d-contents a[href="#' + id + '"]').parent().remove();
+    appendix = true;
+    $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+  });
+
+  // show d-appendix if we have appendix content
+  $("d-appendix").css('display', appendix ? 'grid' : 'none');
+
+  // localize layout chunks to just output
+  $('.layout-chunk').each(function(i, val) {
+
+    // capture layout
+    var layout = $(this).attr('data-layout');
+
+    // apply layout to markdown level block elements
+    var elements = $(this).children().not('details, div.sourceCode, pre, script');
+    elements.each(function(i, el) {
+      var layout_div = $('<div class="' + layout + '"></div>');
+      if (layout_div.hasClass('shaded')) {
+        var shaded_content = $('<div class="shaded-content"></div>');
+        $(this).wrap(shaded_content);
+        $(this).parent().wrap(layout_div);
+      } else {
+        $(this).wrap(layout_div);
+      }
+    });
+
+
+    // unwrap the layout-chunk div
+    $(this).children().unwrap();
+  });
+
+  // remove code block used to force  highlighting css
+  $('.distill-force-highlighting-css').parent().remove();
+
+  // remove empty line numbers inserted by pandoc when using a
+  // custom syntax highlighting theme, except when numbering line
+  // in code chunk
+  $('pre:not(.numberLines) code.sourceCode a:empty').remove();
+
+  // load distill framework
+  load_distill_framework();
+
+  // wait for window.distillRunlevel == 4 to do post processing
+  function distill_post_process() {
+
+    if (!window.distillRunlevel || window.distillRunlevel < 4)
+      return;
+
+    // hide author/affiliations entirely if we have no authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+    if (!have_authors)
+      $('d-byline').addClass('hidden');
+
+    // article with toc class
+    $('.d-contents').parent().addClass('d-article-with-toc');
+
+    // strip links that point to #
+    $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+
+    // add orcid ids
+    $('.authors-affiliations').find('.author').each(function(i, el) {
+      var orcid_id = front_matter.authors[i].orcidID;
+      var author_name = front_matter.authors[i].author
+      if (orcid_id) {
+        var a = $('<a></a>');
+        a.attr('href', 'https://orcid.org/' + orcid_id);
+        var img = $('<img></img>');
+        img.addClass('orcid-id');
+        img.attr('alt', author_name ? 'ORCID ID for ' + author_name : 'ORCID ID');
+        img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+        a.append(img);
+        $(this).append(a);
+      }
+    });
+
+    // hide elements of author/affiliations grid that have no value
+    function hide_byline_column(caption) {
+      $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+    }
+
+    // affiliations
+    var have_affiliations = false;
+    for (var i = 0; i<front_matter.authors.length; ++i) {
+      var author = front_matter.authors[i];
+      if (author.affiliation !== "&nbsp;") {
+        have_affiliations = true;
+        break;
+      }
+    }
+    if (!have_affiliations)
+      $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+
+    // published date
+    if (!front_matter.publishedDate)
+      hide_byline_column("Published");
+
+    // document object identifier
+    var doi = $('d-byline').find('h3:contains("DOI")');
+    var doi_p = doi.next().empty();
+    if (!front_matter.doi) {
+      // if we have a citation and valid citationText then link to that
+      if ($('#citation').length > 0 && front_matter.citationText) {
+        doi.html('Citation');
+        $('<a href="#citation"></a>')
+          .text(front_matter.citationText)
+          .appendTo(doi_p);
+      } else {
+        hide_byline_column("DOI");
+      }
+    } else {
+      $('<a></a>')
+         .attr('href', "https://doi.org/" + front_matter.doi)
+         .html(front_matter.doi)
+         .appendTo(doi_p);
+    }
+
+     // change plural form of authors/affiliations
+    if (front_matter.authors.length === 1) {
+      var grid = $('.authors-affiliations');
+      grid.children('h3:contains("Authors")').text('Author');
+      grid.children('h3:contains("Affiliations")').text('Affiliation');
+    }
+
+    // remove d-appendix and d-footnote-list local styles
+    $('d-appendix > style:first-child').remove();
+    $('d-footnote-list > style:first-child').remove();
+
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+
+    // hoverable references
+    $('span.citation[data-cites]').each(function() {
+      const citeChild = $(this).children()[0]
+      // Do not process if @xyz has been used without escaping and without bibliography activated
+      // https://github.com/rstudio/distill/issues/466
+      if (citeChild === undefined) return true
+
+      if (citeChild.nodeName == "D-FOOTNOTE") {
+        var fn = citeChild
+        $(this).html(fn.shadowRoot.querySelector("sup"))
+        $(this).id = fn.id
+        fn.remove()
+      }
+      var refs = $(this).attr('data-cites').split(" ");
+      var refHtml = refs.map(function(ref) {
+        // Could use CSS.escape too here, we insure backward compatibility in navigator
+        return "<p>" + $('div[id="ref-' + ref + '"]').html() + "</p>";
+      }).join("\n");
+      window.tippy(this, {
+        allowHTML: true,
+        content: refHtml,
+        maxWidth: 500,
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'light-border',
+        placement: 'bottom-start'
+      });
+    });
+
+    // fix footnotes in tables (#411)
+    // replacing broken distill.pub feature
+    $('table d-footnote').each(function() {
+      // we replace internal showAtNode methode which is triggered when hovering a footnote
+      this.hoverBox.showAtNode = function(node) {
+        // ported from https://github.com/distillpub/template/pull/105/files
+        calcOffset = function(elem) {
+            let x = elem.offsetLeft;
+            let y = elem.offsetTop;
+            // Traverse upwards until an `absolute` element is found or `elem`
+            // becomes null.
+            while (elem = elem.offsetParent && elem.style.position != 'absolute') {
+                x += elem.offsetLeft;
+                y += elem.offsetTop;
+            }
+
+            return { left: x, top: y };
+        }
+        // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetTop
+        const bbox = node.getBoundingClientRect();
+        const offset = calcOffset(node);
+        this.show([offset.left + bbox.width, offset.top + bbox.height]);
+      }
+    })
+
+    // clear polling timer
+    clearInterval(tid);
+
+    // show body now that everything is ready
+    on_load_complete();
+  }
+
+  var tid = setInterval(distill_post_process, 50);
+  distill_post_process();
+
+}
+
+function init_downlevel() {
+
+  init_common();
+
+   // insert hr after d-title
+  $('.d-title').after($('<hr class="section-separator"/>'));
+
+  // check if we have authors
+  var front_matter = JSON.parse($("#distill-front-matter").html());
+  var have_authors = front_matter.authors && front_matter.authors.length > 0;
+
+  // manage byline/border
+  if (!have_authors)
+    $('.d-byline').remove();
+  $('.d-byline').after($('<hr class="section-separator"/>'));
+  $('.d-byline a').remove();
+
+  // remove toc
+  $('.d-contents').remove();
+
+  // move appendix elements
+  $('h1.appendix, h2.appendix').each(function(i, val) {
+    $(this).changeElementType('h3');
+  });
+  $('h3.appendix').each(function(i, val) {
+    $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+  });
+
+
+  // inject headers into references and footnotes
+  var refs_header = $('<h3></h3>');
+  refs_header.text('References');
+  $('#refs').prepend(refs_header);
+
+  var footnotes_header = $('<h3></h3');
+  footnotes_header.text('Footnotes');
+  $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+
+  // move appendix-bottom entries to the bottom
+  $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+  $('.appendix-bottom').remove();
+
+  // remove appendix if it's empty
+  if ($('.d-appendix').children().length === 0)
+    $('.d-appendix').remove();
+
+  // prepend separator above appendix
+  $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+
+  // trim code
+  $('pre>code').each(function(i, val) {
+    $(this).html($.trim($(this).html()));
+  });
+
+  // move posts-container right before article
+  $('.posts-container').insertBefore($('.d-article'));
+
+  $('body').addClass('downlevel');
+
+  on_load_complete();
+}
+
+
+function init_common() {
+
+  // jquery plugin to change element types
+  (function($) {
+    $.fn.changeElementType = function(newType) {
+      var attrs = {};
+
+      $.each(this[0].attributes, function(idx, attr) {
+        attrs[attr.nodeName] = attr.nodeValue;
+      });
+
+      this.replaceWith(function() {
+        return $("<" + newType + "/>", attrs).append($(this).contents());
+      });
+    };
+  })(jQuery);
+
+  // prevent underline for linked images
+  $('a > img').parent().css({'border-bottom' : 'none'});
+
+  // mark non-body figures created by knitr chunks as 100% width
+  $('.layout-chunk').each(function(i, val) {
+    var figures = $(this).find('img, .html-widget');
+    // ignore leaflet img layers (#106)
+    figures = figures.filter(':not(img[class*="leaflet"])')
+    if ($(this).attr('data-layout') !== "l-body") {
+      figures.css('width', '100%');
+    } else {
+      figures.css('max-width', '100%');
+      figures.filter("[width]").each(function(i, val) {
+        var fig = $(this);
+        fig.css('width', fig.attr('width') + 'px');
+      });
+
+    }
+  });
+
+  // auto-append index.html to post-preview links in file: protocol
+  // and in rstudio ide preview
+  $('.post-preview').each(function(i, val) {
+    if (window.location.protocol === "file:")
+      $(this).attr('href', $(this).attr('href') + "index.html");
+  });
+
+  // get rid of index.html references in header
+  if (window.location.protocol !== "file:") {
+    $('.distill-site-header a[href]').each(function(i,val) {
+      $(this).attr('href', $(this).attr('href').replace(/^index[.]html/, "./"));
+    });
+  }
+
+  // add class to pandoc style tables
+  $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+  $('.kable-table').children('table').addClass('pandoc-table');
+
+  // add figcaption style to table captions
+  $('caption').parent('table').addClass("figcaption");
+
+  // initialize posts list
+  if (window.init_posts_list)
+    window.init_posts_list();
+
+  // implmement disqus comment link
+  $('.disqus-comment-count').click(function() {
+    window.headroom_prevent_pin = true;
+    $('#disqus_thread').toggleClass('hidden');
+    if (!$('#disqus_thread').hasClass('hidden')) {
+      var offset = $(this).offset();
+      $(window).resize();
+      $('html, body').animate({
+        scrollTop: offset.top - 35
+      });
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  if (is_downlevel_browser())
+    init_downlevel();
+  else
+    window.addEventListener('WebComponentsReady', init_distill);
+});
+
+</script>
+
+<style type="text/css">
+/* base variables */
+
+/* Edit the CSS properties in this file to create a custom
+   Distill theme. Only edit values in the right column
+   for each row; values shown are the CSS defaults.
+   To return any property to the default,
+   you may set its value to: unset
+   All rows must end with a semi-colon.                      */
+
+/* Optional: embed custom fonts here with `@import`          */
+/* This must remain at the top of this file.                 */
+
+
+
+html {
+  /*-- Main font sizes --*/
+  --title-size:      50px;
+  --body-size:       1.06rem;
+  --code-size:       14px;
+  --aside-size:      12px;
+  --fig-cap-size:    13px;
+  /*-- Main font colors --*/
+  --title-color:     #000000;
+  --header-color:    rgba(0, 0, 0, 0.8);
+  --body-color:      rgba(0, 0, 0, 0.8);
+  --aside-color:     rgba(0, 0, 0, 0.6);
+  --fig-cap-color:   rgba(0, 0, 0, 0.6);
+  /*-- Specify custom fonts ~~~ must be imported above   --*/
+  --heading-font:    sans-serif;
+  --mono-font:       monospace;
+  --body-font:       sans-serif;
+  --navbar-font:     sans-serif;  /* websites + blogs only */
+}
+
+/*-- ARTICLE METADATA --*/
+d-byline {
+  --heading-size:    0.6rem;
+  --heading-color:   rgba(0, 0, 0, 0.5);
+  --body-size:       0.8rem;
+  --body-color:      rgba(0, 0, 0, 0.8);
+}
+
+/*-- ARTICLE TABLE OF CONTENTS --*/
+.d-contents {
+  --heading-size:    18px;
+  --contents-size:   13px;
+}
+
+/*-- ARTICLE APPENDIX --*/
+d-appendix {
+  --heading-size:    15px;
+  --heading-color:   rgba(0, 0, 0, 0.65);
+  --text-size:       0.8em;
+  --text-color:      rgba(0, 0, 0, 0.5);
+}
+
+/*-- WEBSITE HEADER + FOOTER --*/
+/* These properties only apply to Distill sites and blogs  */
+
+.distill-site-header {
+  --title-size:       18px;
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        15px;
+  --hover-color:      white;
+  --bkgd-color:       #0F2E3D;
+}
+
+.distill-site-footer {
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        15px;
+  --hover-color:      white;
+  --bkgd-color:       #0F2E3D;
+}
+
+/*-- Additional custom styles --*/
+/* Add any additional CSS rules below                      */
+</style>
+<style type="text/css">/*  Adapted (minimally) from: https://www.milesmcbain.com */
+
+/* base variables */
+
+/* Edit the CSS properties in this file to create a custom
+   Distill theme. Only edit values in the right column
+   for each row; values shown are the CSS defaults.
+   To return any property to the default,
+   you may set its value to: unset
+   All rows must end with a semi-colon.                      */
+
+/* Optional: embed custom fonts here with `@import`          */
+/* This must remain at the top of this file.                 */
+@import url('https://fonts.googleapis.com/css2?family=Cardo');
+@import url('https://fonts.googleapis.com/css2?family=Alata');
+
+
+html {
+  /*-- Main font sizes --*/
+  --title-size:      50px;
+  --body-size:       1.075rem;                   /* edited */
+  --code-size:       14px;
+  --aside-size:      12px;
+  --fig-cap-size:    13px;
+  /*-- Main font colors --*/
+  --title-color:     #000000;
+  --heading-color:   rgba(0, 0, 0, 0.8);
+  --body-color:      rgba(0, 0, 0, 0.8);
+  --aside-color:     rgba(0, 0, 0, 0.6);
+  --fig-cap-color:   rgba(0, 0, 0, 0.6);
+  /*-- Specify custom fonts ~~~ must be imported above   --*/
+  --heading-font:    'Alata', sans-serif;        /* edited */
+  --mono-font:       monospace;
+  --body-font:       'Cardo', serif;             /* edited */
+  --navbar-font:     'Alata', sans-serif;        /* edited */
+}
+
+/*-- ARTICLE METADATA --*/
+d-byline {
+  --heading-size:    0.6rem;
+  --heading-color:   rgba(0, 0, 0, 0.5);
+  --body-size:       0.8rem;
+  --body-color:      rgba(0, 0, 0, 0.8);
+}
+
+/*-- ARTICLE TABLE OF CONTENTS --*/
+.d-contents {
+  --heading-size:    18px;
+  --contents-size:   13px;
+}
+
+/*-- ARTICLE APPENDIX --*/
+d-appendix {
+  --heading-size:    15px;
+  --heading-color:   rgba(0, 0, 0, 0.65);
+  --text-size:       1.075rem;                   /* edited */
+  --text-color:      rgb(0, 0, 0);               /* edited */
+}
+
+/*-- WEBSITE HEADER + FOOTER --*/
+/* These properties only apply to Distill sites and blogs  */
+
+.distill-site-header {
+  --title-size:       18px;
+  --text-color:       #000;                     /* edited */
+  --text-size:        15px;
+  --hover-color:      #ff7300;                  /* edited */
+  --bkgd-color:       #fff;                     /* edited */
+}
+
+.distill-site-footer {
+  --text-color:       #000;                     /* edited */
+  --text-size:        13px;
+  --hover-color:      #ff7300;                  /* edited */
+  --bkgd-color:       #fff;                     /* edited */
+}
+
+/*-- Additional custom styles --*/
+
+.categories li > a:hover {
+    color: #00ff00;
+    border-bottom: 1px #00ff00;
+}
+
+p a:hover  {
+    color: #00ff00;
+}
+
+/* Change appearance of headers */
+h1, h2, h3, h4, h5 {
+    font-weight: 700;
+}
+
+/* Use specific font in the body of the text */
+html, body, p {
+    font-weight: 200;
+    /*line-height: 1.3rem; */
+    /*font-style: normal;*/
+}
+
+ul > li::marker {
+    font-weight: 700;
+    font-size: 1.125em;
+}</style>
+<style type="text/css">
+/* base style */
+
+/* FONT FAMILIES */
+
+:root {
+  --heading-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono-default: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  --body-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+body,
+.posts-list .post-preview p,
+.posts-list .description p {
+  font-family: var(--body-font), var(--body-default);
+}
+
+h1, h2, h3, h4, h5, h6,
+.posts-list .post-preview h2,
+.posts-list .description h2 {
+  font-family: var(--heading-font), var(--heading-default);
+}
+
+d-article div.sourceCode code,
+d-article pre code {
+  font-family: var(--mono-font), var(--mono-default);
+}
+
+
+/*-- TITLE --*/
+d-title h1,
+.posts-list > h1 {
+  color: var(--title-color, black);
+}
+
+d-title h1 {
+  font-size: var(--title-size, 50px);
+}
+
+/*-- HEADERS --*/
+d-article h1,
+d-article h2,
+d-article h3,
+d-article h4,
+d-article h5,
+d-article h6 {
+  color: var(--header-color, rgba(0, 0, 0, 0.8));
+}
+
+/*-- BODY --*/
+d-article > p,  /* only text inside of <p> tags */
+d-article > ul, /* lists */
+d-article > ol {
+  color: var(--body-color, rgba(0, 0, 0, 0.8));
+  font-size: var(--body-size, 1.06rem);
+}
+
+
+/*-- CODE --*/
+d-article div.sourceCode code,
+d-article pre code {
+  font-size: var(--code-size, 14px);
+}
+
+/*-- ASIDE --*/
+d-article aside {
+  font-size: var(--aside-size, 12px);
+  color: var(--aside-color, rgba(0, 0, 0, 0.6));
+}
+
+/*-- FIGURE CAPTIONS --*/
+figure .caption,
+figure figcaption,
+.figure .caption {
+  font-size: var(--fig-cap-size, 13px);
+  color: var(--fig-cap-color, rgba(0, 0, 0, 0.6));
+}
+
+/*-- METADATA --*/
+d-byline h3 {
+  font-size: var(--heading-size, 0.6rem);
+  color: var(--heading-color, rgba(0, 0, 0, 0.5));
+}
+
+d-byline {
+  font-size: var(--body-size, 0.8rem);
+  color: var(--body-color, rgba(0, 0, 0, 0.8));
+}
+
+d-byline a,
+d-article d-byline a {
+  color: var(--body-color, rgba(0, 0, 0, 0.8));
+}
+
+/*-- TABLE OF CONTENTS --*/
+.d-contents nav h3 {
+  font-size: var(--heading-size, 18px);
+}
+
+.d-contents nav a {
+  font-size: var(--contents-size, 13px);
+}
+
+/*-- APPENDIX --*/
+d-appendix h3 {
+  font-size: var(--heading-size, 15px);
+  color: var(--heading-color, rgba(0, 0, 0, 0.65));
+}
+
+d-appendix {
+  font-size: var(--text-size, 0.8em);
+  color: var(--text-color, rgba(0, 0, 0, 0.5));
+}
+
+d-appendix d-footnote-list a.footnote-backlink {
+  color: var(--text-color, rgba(0, 0, 0, 0.5));
+}
+
+/*-- WEBSITE HEADER + FOOTER --*/
+.distill-site-header .title {
+  font-size: var(--title-size, 18px);
+  font-family: var(--navbar-font), var(--heading-default);
+}
+
+.distill-site-header a,
+.nav-dropdown .nav-dropbtn {
+  font-family: var(--navbar-font), var(--heading-default);
+}
+
+.nav-dropdown .nav-dropbtn {
+  color: var(--text-color, rgba(255, 255, 255, 0.8));
+  font-size: var(--text-size, 15px);
+}
+
+.distill-site-header a:hover,
+.nav-dropdown:hover .nav-dropbtn {
+  color: var(--hover-color, white);
+}
+
+.distill-site-header {
+  font-size: var(--text-size, 15px);
+  color: var(--text-color, rgba(255, 255, 255, 0.8));
+  background-color: var(--bkgd-color, #0F2E3D);
+}
+
+.distill-site-footer {
+  font-size: var(--text-size, 15px);
+  color: var(--text-color, rgba(255, 255, 255, 0.8));
+  background-color: var(--bkgd-color, #0F2E3D);
+}
+
+.distill-site-footer a:hover {
+  color: var(--hover-color, white);
+}</style>
+<!--/radix_placeholder_distill-->
+  <script src="../../site_libs/header-attrs-2.16/header-attrs.js"></script>
+  <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
+  <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="../../site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="../../site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="../../site_libs/anchor-4.2.2/anchor.min.js"></script>
+  <script src="../../site_libs/bowser-1.9.3/bowser.min.js"></script>
+  <script src="../../site_libs/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="../../site_libs/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    if (!/posts/.test(location.pathname)) {
+      return;
+    }
+
+    var script = document.createElement("script");
+    script.src = "https://utteranc.es/client.js";
+    script.setAttribute("repo", "seabbs/seabbs.github.io");
+    script.setAttribute("issue-term", "title");
+    script.setAttribute("crossorigin", "anonymous");
+    script.setAttribute("label", "comments 💬");
+    script.setAttribute("theme", "github-light");
+
+    /* wait for article to load, append script to article element */
+    var observer = new MutationObserver(function (mutations, observer) {
+      var article = document.querySelector("d-article");
+      if (article) {
+        observer.disconnect();
+        /* HACK: article scroll */
+        article.setAttribute("style", "overflow-y: hidden");
+        article.appendChild(script);
+      }
+    });
+
+    observer.observe(document.body, { childList: true });
+  });
+</script>
+<!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"What is 80% good enough for real-time infectious disease analyses?","description":"A comment piece exploring what factors led to limitations in some of the work we produced during the COVID-19 pandemic, whether this work was good enough, and some potential ideas for improving future work of a similar kind.","authors":[{"author":"Sam Abbott","authorURL":"https://samabbott.co.uk","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""},{"author":"Joel Hellewell","authorURL":"https://jhellewell14.github.io/","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-09-19T00:00:00.000+00:00","citationText":"Abbott & Hellewell, 2022"}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<header class="header header--fixed" role="banner">
+<nav class="distill-site-nav distill-site-header">
+<div class="nav-left">
+<a class="logo" href="https://samabbott.co.uk">
+<img src="../../images/party-hat.jpg" alt="Logo"/>
+</a>
+<a href="../../index.html" class="title">Sam Abbott</a>
+</div>
+<div class="nav-right">
+<a href="../../posts.html">Posts</a>
+<a href="https://notes.samabbott.co.uk">Notes</a>
+<a href="../../research.html">Research</a>
+<a href="https://github.com/seabbs/seabbs/issues">Ideas</a>
+<a href="https://github.com/seabbs">Code</a>
+<a href="https://scholar.google.co.uk/citations?user=GqZm90IAAAAJ">Papers</a>
+<a href="../../talks.html">Talks</a>
+<a href="../../index.html">About</a>
+<a href="https://twitter.com/seabbs">
+<i class="fab fa-twitter" aria-hidden="true"></i>
+</a>
+<a href="../../index.xml">
+<i class="fa fa-rss" aria-hidden="true"></i>
+</a>
+<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
+</div>
+</nav>
+</header>
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>What is 80% good enough for real-time infectious disease analyses?</h1>
+<!--radix_placeholder_categories-->
+<!--/radix_placeholder_categories-->
+<p><p>A comment piece exploring what factors led to limitations in some of the work we produced during the COVID-19 pandemic, whether this work was good enough, and some potential ideas for improving future work of a similar kind.</p></p>
+</div>
+
+<div class="d-byline">
+  Sam Abbott <a href="https://samabbott.co.uk" class="uri">https://samabbott.co.uk</a> 
+  
+,   Joel Hellewell <a href="https://jhellewell14.github.io/" class="uri">https://jhellewell14.github.io/</a> 
+  
+<br/>2022-09-19
+</div>
+
+<div class="d-article">
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#summary">Summary</a></li>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#case-studies">Case studies</a></li>
+<li><a href="#conclusions">Conclusions</a></li>
+<li><a href="#acknowledgements">Acknowledgements</a></li>
+</ul>
+</nav>
+</div>
+<h2 id="summary">Summary</h2>
+<p>The COVID-19 pandemic has seen an unprecedented use of infectious disease research conducted over short time scales as a tool for setting health policy. However, it has been widely recognised that some of this work was flawed. These flaws were often acknowledged by the authors but in some cases were not. Here we explore some of the underlying reasons for these limitations using examples drawn from our own work. We do not highlight limitations in the work of others but expect these would be similar. This means that decisions made using a wide array of sources of evidence may still be vulnerable to these issues. We welcome, and encourage, similar reflections from other groups contextualised using their work.</p>
+<p>We find that key issues include: lack of technical and statistical knowledge, poor availability of domain-specific tools, limited evaluation of available methods and tools, difficulty in maintaining long-term projects, and lack of support for gradual advance outside periods of crisis. We conclude that researchers should be more open and realistic about the limitations of their work and the reasons for them and that more focus and support should be given to evaluation, incremental improvement, and the development of domain-specific tools if we wish to improve the quality of evidence available in real-time for future outbreaks.</p>
+<p>This piece was originally written in August 2021 and shared with colleagues, but as we see it little progress has been made since on the issues we raise. The recent Monkeypox outbreak and response highlights this lack of progress and the limited lessons learned so far from the COVID-19 pandemic.</p>
+<p>In February 2022, SA gave a talk at the LSHTM symposium <em>How can mathematical and statistical models combine with big data to improve our response to pandemics</em> <span class="citation" data-cites="LSHTMsym">(<a href="#ref-LSHTMsym" role="doc-biblioref">S. C. Whitty and McLean, n.d.</a>)</span> which touched on some of the same issues and for which a recording is available<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. SA, along with Sebastian Funk, has also written a related reflection on our efforts to produce real-time effective reproduction estimates <span class="citation" data-cites="rtreflections">(<a href="#ref-rtreflections" role="doc-biblioref">Abbott and Funk 2022</a>)</span>. Since writing this piece we have also become involved in the Epinowcast community project <span class="citation" data-cites="epinowcastorg">(<a href="#ref-epinowcastorg" role="doc-biblioref"><span>“Welcome to the Epinowcast Community,”</span> n.d.</a>)</span> which aims to deal with many of the issues we raise here. If interested in supporting this project either via contributions, community participation, or financial support please reach out.</p>
+<h2 id="introduction">Introduction</h2>
+<p>A great deal of the scientific response to the COVID-19 pandemic involved estimating as quickly as possible the most pertinent biological and epidemiological properties of the novel respiratory virus SARS-CoV-2. This research often fed into government policy decisions related to responding to the outbreak, and therefore needed to be as accurate as possible. However, there is an inevitable trade-off between speed and accuracy in scientific research, as developing a thorough and nuanced analysis for which you are confident of its accuracy takes time and resources. Scientists are required to judge when their work has reached a level of accuracy that is “good enough” to be shared with policymakers or advisory panels so that a decision can be made. Working longer would often increase the accuracy of the work but it may not add further information that would aid in decision-making. This attitude is reflected in this quote from Chris Witty, the UK Government Chief Medical Adviser <span class="citation" data-cites="whitty_what_2015">(<a href="#ref-whitty_what_2015" role="doc-biblioref">C. J. M. Whitty 2015</a>)</span>:</p>
+<blockquote>
+<p>An 80% right paper before a policy decision is made is worth ten 95% right papers afterwards, provided the methodological limitations imposed by doing it fast are made clear.</p>
+</blockquote>
+<p>This quote, as well as the attitude it represents, is commonly referenced in much of the academic discourse <span class="citation" data-cites="brooks-pollock">(<a href="#ref-brooks-pollock" role="doc-biblioref">Brooks-Pollock et al. 2021</a>)</span> around real-time analyses conducted to inform COVID-19 health policy. Less attention is commonly given to what is considered 80% right and the conditional statement that limitations must be clearly stated. Here, using examples from our policy adjacent COVID-19 work, we explore what it means for work to be 80% good enough, and highlight issues that prevent it from being better or limitations being more clearly stated.</p>
+<h2 id="case-studies">Case studies</h2>
+<h3 id="effective-reproduction-number-estimation">Effective reproduction number estimation</h3>
+<p>The reproduction number has been a key epidemiological measurement during the COVID-19 pandemic. Estimating the basic reproduction number from early data emerging from Wuhan province, China, indicated the infectiousness, and pandemic potential, of the then-unknown novel pathogen <span class="citation" data-cites="Abbottncov">(<a href="#ref-Abbottncov" role="doc-biblioref">Abbott, Hellewell, Munday, et al. 2020</a>)</span>. The effective reproduction number has also been extensively used to track the course of the pandemic and evaluate the impact of interventions in many countries. We started estimating the effective reproduction number in real-time in February 2020, with a focus on China before expanding to include national estimates globally, as well as estimates at smaller scales in multiple countries and with a range of data sources <span class="citation" data-cites="Abbott2020v1 Abbott2020v2">(<a href="#ref-Abbott2020v1" role="doc-biblioref">Abbott, Hellewell, Thompson, et al. 2020a</a>, <a href="#ref-Abbott2020v2" role="doc-biblioref">2020b</a>)</span>. Our estimates for the United Kingdom fed into the Scientific Pandemic Influenza Group on Modelling (SPI-M) aggregated reproduction number estimates and short-term forecasts <span class="citation" data-cites="sherratt_exploring_2021 funk_short-term_2020">(<a href="#ref-sherratt_exploring_2021" role="doc-biblioref">Sherratt et al. 2021</a>; <a href="#ref-funk_short-term_2020" role="doc-biblioref">Funk et al. 2020</a>)</span> and our site presenting these estimates had over 500,000 unique users including public health decision makers <span class="citation" data-cites="rtreflections">(<a href="#ref-rtreflections" role="doc-biblioref">Abbott and Funk 2022</a>)</span>. Estimates were produced daily for many different countries across multiple geographic aggregations and surveillance data sources. The open-source tools we developed as part of this project have also been used widely by other research groups and public health practitioners for a range of real-time analyses <span class="citation" data-cites="epinow2">(<a href="#ref-epinow2" role="doc-biblioref">Abbott, Hellewell, Sherratt, et al. 2020</a>)</span>.</p>
+<p>As these estimates were produced in an automated fashion on a routine basis, at scale across highly varied settings, and by a resource-constrained research group they had many limitations. In our published work, we reported a range of these limitations including the lack of location-specific data on the time from infection to the case report, lack of clarity on the interaction between the generation time and the reproduction number, difficulty in extrapolating current reported cases to infer the dynamics of current infections, and the general assumption that aside from the effective reproduction number other parameters were static in time.</p>
+<p>However, our initial work also included an unknown, and hence unreported, limitation in that it assumed that the distribution of the time delay from infection to report could be treated as reversible <span class="citation" data-cites="Abbott2020v1">(<a href="#ref-Abbott2020v1" role="doc-biblioref">Abbott, Hellewell, Thompson, et al. 2020a</a>)</span>. This has since been investigated and has been shown to result in over-smoothed, biased estimates that lag behind real-world changes in transmission <span class="citation" data-cites="gostic">(<a href="#ref-gostic" role="doc-biblioref">Gostic et al. 2020</a>)</span>. Though this issue has since been mitigated via methodological developments <span class="citation" data-cites="Abbott2020v2">(<a href="#ref-Abbott2020v2" role="doc-biblioref">Abbott, Hellewell, Thompson, et al. 2020b</a>)</span> it is likely that it resulted in flawed inferences. The primary reason for our initial flawed implementation was our lack of familiarity with the relevant literature for real-time reproduction number estimation and incidence curve reconstruction, compounded by the general conflation of real-time and retrospective methodologies in the public health community.</p>
+<p>Methods to estimate infections from the reported cases were widely used during the HIV/AIDS epidemic <span class="citation" data-cites="gostic">(<a href="#ref-gostic" role="doc-biblioref">Gostic et al. 2020</a>)</span>, but the literature available at the start of the pandemic was, as far as we are aware, largely historical and had seen limited continued development. Whilst tools existed to estimate the effective reproduction number targeting real-time settings these had in general not been developed with the ability to handle the realities of delayed reporting and time-varying ascertainment <span class="citation" data-cites="epiestim">(<a href="#ref-epiestim" role="doc-biblioref">Cori et al. 2021</a>)</span>. Other tools and methods had been explored to deal with reporting delays <span class="citation" data-cites="surveillance1 surveillance2">(<a href="#ref-surveillance1" role="doc-biblioref">Salmon, Schumacher, and Höhle 2016</a>; <a href="#ref-surveillance2" role="doc-biblioref">Meyer, Held, and Höhle 2017</a>)</span> but in general, these had not been fully evaluated, were often not robust to real-time data challenges, and were difficult to link together to answer real-time questions of interest. Much research work has been done for specific settings but in general, this rarely appears to lead to generalisable methods and in many cases, it is difficult to verify how well the approaches work outside the context for which they were developed. This limitation was a result of a lack of knowledge within our research group but unacknowledged limitations of this kind will remain unless methodological developments are propagated into robust, and well-evaluated, tooling since much of the real-time analysis was and will continue to be done by early career researchers who may lack the breadth of experience necessary.</p>
+<p>Other key issues with this project were its continuous, repetitive nature, the lack of discrete research outcomes, and its large scope. Due to its scale, it required detailed knowledge of multiple statistical and mechanistic modelling approaches, software engineering skills, and insights into each data source used. Initially, whilst the scope of the was somewhat limited, it was possible to incentivise sufficient contributions. As the project continued the scope widened, more maintenance was required, and attention moved on to other problems, meaning that it became more difficult to source sufficient resources. This was compounded once the initial research paper on the methodology had been published and traditional academic credit was no longer available <span class="citation" data-cites="Abbott2020v1">(<a href="#ref-Abbott2020v1" role="doc-biblioref">Abbott, Hellewell, Thompson, et al. 2020a</a>)</span>. This resulted in breakdowns in estimation, lack of innovation in the underlying methodology, limited evaluation, less than optimal software engineering making reuse challenging, and flawed estimates in some geographies where the data had unaccounted for eccentricities.</p>
+<p>Ideally, these problems could have been resolved by building collaborations with those developing new methodologies, making use of estimates, or developing effective reproduction number estimation pipelines of their own. In practice, this was difficult to negotiate despite spending significant time and resources with this aim in mind. A range of real-time (and retrospective methods that can be repurposed for real-time usage) estimation methods now exist. Generally, these methods (including our own) have only been partially evaluated and they are rarely designed with reusability, robustness, or routine usage in mind. The situation now is unfortunately not too different to the start of the pandemic, despite significant apparent progress in methodology being achieved over the past two years. A researcher without previous experience in this area looking to perform some real-time analysis would likely still find it time-consuming to either properly evaluate the breadth of different methods themselves, or develop a robust software implementation of an existing method for which it does not already exist. We note that projects now exist to develop tooling to try and overcome some of these limitations but in general these projects are independent siloed efforts that do not build on the work of others. We feel that this approach is unlikely to lead to success given its repeated failure in the past in similar contexts.</p>
+<h3 id="estimating-the-transmissibility-advantage-of-variants-of-concern">Estimating the transmissibility advantage of variants of concern</h3>
+<p>Our second example is two linked studies that were conducted in December 2020 and June 2021 to estimate the transmissibility advantage of the Alpha and Delta variants of COVID-19 <span class="citation" data-cites="Davies2021 AbbottDelta">(<a href="#ref-Davies2021" role="doc-biblioref">Davies et al. 2021</a>; <a href="#ref-AbbottDelta" role="doc-biblioref">Abbott, Kucharski, and Funk 2021</a>)</span>. Both of these analyses used the same underlying regression framework to model the contribution to the effective reproduction number from the variant of concern compared to all other variants (with this only being a small part of the analyses in <span class="citation" data-cites="Davies2021">(<a href="#ref-Davies2021" role="doc-biblioref">Davies et al. 2021</a>)</span>). This gives a multiplicative transmission advantage estimate for the variant of concern compared to other circulating variants after adjusting for static and time-varying variables influencing transmission. These analyses were presented to SPI-M with the first, after being aggregated with estimates from other sources, being widely reported in the media, often as only a point estimate.</p>
+<p>These analyses reported a range of limitations including the use of the mean reproduction number estimate and proportion of cases that had the variant of concern, the use of S-gene target failure as a proxy for variant status, the lack of UK-specific generation time estimates, the lack of explicit modelling of auto-correlation, the use of non-parametric reproduction number estimates as an input rather than a single model, and the assumption that the generation time was unchanged between variants. These issues were likely to have led to spuriously precise results, though the magnitude of this is difficult to quantify. Bias may have been introduced by using the mean estimated reproduction numbers and mean proportion of cases with the variant of concern as this weighs all areas equally. Bias may also have been introduced due to the assumption that the generation time was unchanged between variants. It is unclear to what extent these limitations impact the accuracy of these analyses and the resulting decision that may have been partially based on them.</p>
+<p>This example highlights a general problem in real-time COVID-19 analysis: the quantification of uncertainty<span class="citation" data-cites="zelner">(<a href="#ref-zelner" role="doc-biblioref">Zelner et al. 2021</a>)</span>, or lack thereof. It is difficult to assess the impact of the limitations on the transmission advantage analysis without replication of these studies with improved methods. The analysis was repeated effectively unchanged when concerns were raised about the Delta variant despite several months having passed in which improvements could have been made and it being entirely predictable that similar methodologies would likely be needed in the future. The reasons for this repetition were lack of capacity, both in terms of researcher time and technical infrastructure such as compute resources. Some small progress has since been made in improving this approach <span class="citation" data-cites="Abbott:pr">(<a href="#ref-Abbott:pr" role="doc-biblioref">Abbott and Funk, n.d.</a>)</span> but it has not been possible to prioritise due to other, better incentivised, research questions. Unfortunately, this is a commonly repeated pattern of doing an analysis that you hope is 80% correct but cannot check, due to limited time and resources. Then later you end up doing the same analysis when a similar question re-emerges, without any progress toward knowing if you were 80% correct or not.</p>
+<p>In this instance, the lack of capacity is in large part due to a deluge of other concerns arising in the time between the two variants emerging. It can often be difficult to justify method evaluation as novel and important work, even though it can require substantially more complex methods than the original analysis. Given the likely development of new variants that would require the same work, not prioritising evaluating the accuracy of this analysis after its first application was an oversight. Other research groups have made progress in this area but effective reproduction number estimation solutions for co-circulating variants that are methodologically robust, well-engineered, thoroughly evaluated, and easily generalisable are not as openly available as needed should another pandemic scale outbreak occur in the short term.</p>
+<h2 id="conclusions">Conclusions</h2>
+<p>Our examples have highlighted common themes that prevented us from performing fast, accurate real-time analyses. The demand for real-time analyses during the pandemic has exposed the lack of required knowledge in traditional research groups, even in those theoretically geared towards this area, including limited domain knowledge, statistical knowledge, software engineering skills, and experience putting ad-hoc analyses into routine production. These knowledge gaps are compounded by an additional lack of well-developed, and well-evaluated, software tools designed to be used flexibly for real-world analysis questions. Many of the currently available non-domain specific open-source tools, whilst generally high quality, require a substantial level of user knowledge and for relatively common domain-specific problems can require significant researcher time and expertise to produce useful results. Most of the available domain-specific tools have significant limitations, are not continuously supported, and have not been robustly evaluated in a broad enough range of contexts. Another common theme we identify that further compounds these issues is the difficulty, mainly caused by lack of incentives, in collaborating across groups on rapidly developing problems, and on method and tool development more generally.</p>
+<p>Whilst it is difficult to define what is “good enough” for real-time analyses, we have summarised some of the common causes of the limitations within our work during the COVID-19 pandemic. We contend that real-time analysis, because it needs to be performed quickly and with confidence in the level of accuracy, should be undertaken, structured, and incentivised differently from other academic infectious disease research. A suitable analogy might be that firefighters, upon receiving the report that a fire has begun, do not then proceed by designing and developing their tools to fight the fire. The emergency response to a novel pathogen outbreak requires robust, well-understood, well-documented, and thoroughly evaluated methodologies and tools to perform the tasks that we can foresee will be needed each time such an event occurs. Efforts have been made historically to address some of these concerns, mainly for low-level tooling, but we saw little use of these tools during the COVID-19 pandemic <span class="citation" data-cites="RECON">(<a href="#ref-RECON" role="doc-biblioref">RECON-R Epidemics Consortium, n.d.</a>)</span>. We must learn lessons from these initiatives to make progress in improving the response to future outbreaks.</p>
+<p>We feel that the issues addressed here that stand in the way of good real-time analysis are due to persistent structural flaws within the academic system<span class="citation" data-cites="kucharski_covid-19_2020">(<a href="#ref-kucharski_covid-19_2020" role="doc-biblioref">Kucharski, Funk, and Eggo 2020</a>)</span> which, while they affect all research, particularly affect real-time analysis where there is less tolerance for inefficiencies and flawed results. Many of the issues we have highlighted are exacerbated by an academic culture that promotes apparent individual scientific achievement over collaborative work, that does not promote a culture of ongoing technical and statistical training, and indeed does not reward or value these skills in applied researchers beyond early career stages.</p>
+<p>All of the examples in this letter were published with open-source code and the majority are contained in commonly used open-source software tools. In theory, this should allow other researchers to explore these analyses and mitigate some of the limitations but in practice, incentive structures favor new work rather than incremental improvements and evaluation. We feel it is vital that we and others evaluate real-time analyses, improve on the methodology used, and expand the supply of domain-specific tooling so that future work can be of higher quality. This can most easily be done when researchers are open and honest about the limitations of their work and the causes of these limitations and funders understand and are supportive of these goals.</p>
+<h2 id="acknowledgements">Acknowledgements</h2>
+<p>We thank Sebastian Funk for his feedback on an earlier version of this piece.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-rtreflections" class="csl-entry" role="doc-biblioentry">
+Abbott, Sam, and Sebastian Funk. 2022. <span>“<span>EpiForecasts</span> - Reflections on Two Years Estimating Effective Reproduction Numbers.”</span> <a href="https://epiforecasts.io/posts/2022-03-25-rt-reflections/#an-attempt-to-design-a-useful-resource-for-situational-awareness">https://epiforecasts.io/posts/2022-03-25-rt-reflections/#an-attempt-to-design-a-useful-resource-for-situational-awareness</a>.
+</div>
+<div id="ref-Abbott:pr" class="csl-entry" role="doc-biblioentry">
+———. n.d. <span>“Covid19.sgene.utla.rt: Recast to a Non-Linear Model.”</span> <a href="https://github.com/epiforecasts/covid19.sgene.utla.rt/pull/42">https://github.com/epiforecasts/covid19.sgene.utla.rt/pull/42</a>.
+</div>
+<div id="ref-Abbottncov" class="csl-entry" role="doc-biblioentry">
+Abbott, Sam, Joel Hellewell, James Munday, CMMID nCoV working group, and Sebastian Funk. 2020. <span>“The Transmissibility of Novel Coronavirus in the Early Stages of the 2019-20 Outbreak in Wuhan: Exploring Initial Point-Source Exposure Sizes and Durations Using Scenario Analysis.”</span> <em>Wellcome Open Res</em> 5 (February): 17. <a href="https://doi.org/10.12688/wellcomeopenres.15718.1">https://doi.org/10.12688/wellcomeopenres.15718.1</a>.
+</div>
+<div id="ref-epinow2" class="csl-entry" role="doc-biblioentry">
+Abbott, Sam, Joel Hellewell, Katharine Sherratt, Katelyn Gostic, Joe Hickson, Hamada S. Badr, Michael DeWitt, Robin Thompson, EpiForecasts, and Sebastian Funk. 2020. <em>EpiNow2: Estimate Real-Time Case Counts and Time-Varying Epidemiological Parameters</em>. <a href="https://doi.org/10.5281/zenodo.3957489">https://doi.org/10.5281/zenodo.3957489</a>.
+</div>
+<div id="ref-Abbott2020v1" class="csl-entry" role="doc-biblioentry">
+Abbott, Sam, Joel Hellewell, Robin N. Thompson, Katharine Sherratt, Hamish P. Gibbs, Nikos I. Bosse, James D. Munday, et al. 2020a. <span>“<span class="nocase">Estimating the time-varying reproduction number of SARS-CoV-2 using national and subnational case counts [version 1]</span>.”</span> <em>Wellcome Open Research</em> 5 (December): 112. <a href="https://doi.org/10.12688/wellcomeopenres.16006.1">https://doi.org/10.12688/wellcomeopenres.16006.1</a>.
+</div>
+<div id="ref-Abbott2020v2" class="csl-entry" role="doc-biblioentry">
+———, et al. 2020b. <span>“<span class="nocase">Estimating the time-varying reproduction number of SARS-CoV-2 using national and subnational case counts [version 2]</span>.”</span> <em>Wellcome Open Research</em> 5 (December): 112. <a href="https://doi.org/10.12688/wellcomeopenres.16006.2">https://doi.org/10.12688/wellcomeopenres.16006.2</a>.
+</div>
+<div id="ref-AbbottDelta" class="csl-entry" role="doc-biblioentry">
+Abbott, Sam, Adam J. Kucharski, and Sebastian Funk. 2021. <span>“Estimating the Increase in Reproduction Number Associated with the <span>Delta</span> Variant Using Local Area Dynamics in <span>England</span>,”</span> August.
+</div>
+<div id="ref-brooks-pollock" class="csl-entry" role="doc-biblioentry">
+Brooks-Pollock, Ellen, Leon Danon, Thibaut Jombart, and Lorenzo Pellis. 2021. <span>“Modelling That Shaped the Early <span>COVID</span>-19 Pandemic Response in the <span>UK</span>.”</span> <em>Philosophical Transactions of the Royal Society B: Biological Sciences</em> 376 (1829): 20210001. <a href="https://doi.org/10.1098/rstb.2021.0001">https://doi.org/10.1098/rstb.2021.0001</a>.
+</div>
+<div id="ref-epiestim" class="csl-entry" role="doc-biblioentry">
+Cori, A, ZN Kamvar, J Stockwin, T Jombart, E Dahlqwist, R FitzJohn, and R Thompson. 2021. <span>“<span class="nocase">EpiEstim v2.2-3: A tool to estimate time varying instantaneous reproduction number during epidemics</span>.”</span> <em>GitHub Repository</em>. <a href="https://github.com/mrc-ide/EpiEstim">https://github.com/mrc-ide/EpiEstim</a>; GitHub.
+</div>
+<div id="ref-Davies2021" class="csl-entry" role="doc-biblioentry">
+Davies, Nicholas G., Sam Abbott, Rosanna C. Barnard, Christopher I. Jarvis, Adam J. Kucharski, James D. Munday, Carl A. B. Pearson, et al. 2021. <span>“<span class="nocase">Estimated transmissibility and impact of SARS-CoV-2 lineage B.1.1.7 in England</span>.”</span> <em>Science</em> 372 (6538): eabg3055. <a href="https://doi.org/10.1126/science.abg3055">https://doi.org/10.1126/science.abg3055</a>.
+</div>
+<div id="ref-funk_short-term_2020" class="csl-entry" role="doc-biblioentry">
+Funk, S., S. Abbott, B. D. Atkins, M. Baguelin, J. K. Baillie, P. Birrell, J. Blake, et al. 2020. <span>“Short-Term Forecasts to Inform the Response to the <span>Covid</span>-19 Epidemic in the <span>UK</span>.”</span> <a href="https://doi.org/10.1101/2020.11.11.20220962">https://doi.org/10.1101/2020.11.11.20220962</a>.
+</div>
+<div id="ref-gostic" class="csl-entry" role="doc-biblioentry">
+Gostic, Katelyn M., Lauren McGough, Edward B. Baskerville, Sam Abbott, Keya Joshi, Christine Tedijanto, Rebecca Kahn, et al. 2020. <span>“Practical Considerations for Measuring the Effective Reproductive Number, <span>Rt</span>.”</span> <em>PLOS Computational Biology</em> 16 (12): e1008409. <a href="https://doi.org/10.1371/journal.pcbi.1008409">https://doi.org/10.1371/journal.pcbi.1008409</a>.
+</div>
+<div id="ref-kucharski_covid-19_2020" class="csl-entry" role="doc-biblioentry">
+Kucharski, Adam J., Sebastian Funk, and Rosalind M. Eggo. 2020. <span>“The <span>COVID</span>-19 Response Illustrates That Traditional Academic Reward Structures and Metrics Do Not Reflect Crucial Contributions to Modern Science.”</span> <em>PLOS Biology</em> 18 (10): e3000913. <a href="https://doi.org/10.1371/journal.pbio.3000913">https://doi.org/10.1371/journal.pbio.3000913</a>.
+</div>
+<div id="ref-surveillance2" class="csl-entry" role="doc-biblioentry">
+Meyer, Sebastian, Leonhard Held, and Michael Höhle. 2017. <span>“Spatio-Temporal Analysis of Epidemic Phenomena Using the <span>R</span> Package <span class="nocase">surveillance</span>.”</span> <em>Journal of Statistical Software</em> 77 (11): 1–55. <a href="https://doi.org/10.18637/jss.v077.i11">https://doi.org/10.18637/jss.v077.i11</a>.
+</div>
+<div id="ref-RECON" class="csl-entry" role="doc-biblioentry">
+RECON-R Epidemics Consortium. n.d. <span>“<span>R</span> Epidemics Consortium.”</span> <a href="https://www.repidemicsconsortium.org/">https://www.repidemicsconsortium.org/</a>.
+</div>
+<div id="ref-surveillance1" class="csl-entry" role="doc-biblioentry">
+Salmon, Maëlle, Dirk Schumacher, and Michael Höhle. 2016. <span>“Monitoring Count Time Series in <span>R</span>: Aberration Detection in Public Health Surveillance.”</span> <em>Journal of Statistical Software</em> 70 (10): 1–35. <a href="https://doi.org/10.18637/jss.v070.i10">https://doi.org/10.18637/jss.v070.i10</a>.
+</div>
+<div id="ref-sherratt_exploring_2021" class="csl-entry" role="doc-biblioentry">
+Sherratt, Katharine, Sam Abbott, Sophie R. Meakin, Joel Hellewell, James D. Munday, Nikos Bosse, null null, Mark Jit, and Sebastian Funk. 2021. <span>“Exploring Surveillance Data Biases When Estimating the Reproduction Number: With Insights into Subpopulation Transmission of <span>COVID</span>-19 in <span>England</span>.”</span> <em>Philosophical Transactions of the Royal Society B: Biological Sciences</em> 376 (1829): 20200283. <a href="https://doi.org/10.1098/rstb.2020.0283">https://doi.org/10.1098/rstb.2020.0283</a>.
+</div>
+<div id="ref-epinowcastorg" class="csl-entry" role="doc-biblioentry">
+<span>“Welcome to the Epinowcast Community.”</span> n.d. <a href="https://www.epinowcast.org/">https://www.epinowcast.org/</a>.
+</div>
+<div id="ref-whitty_what_2015" class="csl-entry" role="doc-biblioentry">
+Whitty, Christopher J. M. 2015. <span>“What Makes an Academic Paper Useful for Health Policy?”</span> <em>BMC Medicine</em> 13 (1): 301. <a href="https://doi.org/10.1186/s12916-015-0544-8">https://doi.org/10.1186/s12916-015-0544-8</a>.
+</div>
+<div id="ref-LSHTMsym" class="csl-entry" role="doc-biblioentry">
+Whitty, Sir Chris, and Dame Angela McLean. n.d. <span>“How Can Mathematical and Statistical Models Combine with Big Data to Improve Our Response to Pandemics?”</span> <a href="https://www.lshtm.ac.uk/newsevents/events/how-can-mathematical-and-statistical-models-combine-big-data-improve-our-response">https://www.lshtm.ac.uk/newsevents/events/how-can-mathematical-and-statistical-models-combine-big-data-improve-our-response</a>.
+</div>
+<div id="ref-zelner" class="csl-entry" role="doc-biblioentry">
+Zelner, Jon, Julien Riou, Ruth Etzioni, and Andrew Gelman. 2021. <span>“Accounting for Uncertainty During a Pandemic.”</span> <em>Patterns</em> 2 (8). <a href="https://doi.org/10.1016/j.patter.2021.100310">https://doi.org/10.1016/j.patter.2021.100310</a>.
+</div>
+</div>
+<section class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>slides are also available here: <a href="https://samabbott.co.uk/presentations/2022/how-can-governments-prepare-for-the-next-pandemic.pdf" class="uri">https://samabbott.co.uk/presentations/2022/how-can-governments-prepare-for-the-next-pandemic.pdf</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+<!--radix_placeholder_article_footer-->
+<div class="article-footer">
+  <p class="social_footer">
+    <span class="article-sharing">
+      Share: &nbsp;
+      <a href="https://twitter.com/share?text=What%20is%2080%25%20good%20enough%20for%20real-time%20infectious%20disease%20analyses%3F&amp;url=https%3A%2F%2Fsamabbott.co.uk%2Fposts%2F2022-09-19-80-percent-good-enough%2F" aria-label="share on twitter">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+    </span>
+  </p>
+  <p>
+    <div class="subscribe"><form method='post' action='https://blogtrottr.com'>
+  <p>Enjoy this blog? Get notified of new posts via email:</p>
+  <input type='text' name='btr_email' />
+  <input type='hidden' name='btr_url'
+         value='https://samabbott.co.uk/index.xml'/>
+  <input type='hidden' name='schedule_type' value='0' />
+  <input type='submit' value='Subscribe' />
+</form>
+</div>
+  </p>
+</div>
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom">
+  <h3 id="references">References</h3>
+  <div id="references-listing"></div>
+  <h3 id="updates-and-corrections">Corrections</h3>
+  <p>If you see mistakes or want to suggest changes, please <a href="https://github.com/seabbs/seabbs.github.io/issues/new">create an issue</a> on the source repository.</p>
+  <h3 id="reuse">Reuse</h3>
+  <p>Text and figures are licensed under Creative Commons Attribution <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Source code is available at <a href="https://github.com/seabbs/seabbs.github.io">https://github.com/seabbs/seabbs.github.io</a>, unless otherwise noted. The figures that have been reused from other sources don't fall under this license and can be recognized by a note in their caption: "Figure from ...".</p>
+  <h3 id="citation">Citation</h3>
+  <p>For attribution, please cite this work as</p>
+  <pre class="citation-appendix short">Abbott &amp; Hellewell (2022, Sept. 19). Sam Abbott: What is 80% good enough for real-time infectious disease analyses?. Retrieved from https://samabbott.co.uk/posts/2022-09-19-80-percent-good-enough/</pre>
+  <p>BibTeX citation</p>
+  <pre class="citation-appendix long">@misc{abbott2022what,
+  author = {Abbott, Sam and Hellewell, Joel},
+  title = {Sam Abbott: What is 80% good enough for real-time infectious disease analyses?},
+  url = {https://samabbott.co.uk/posts/2022-09-19-80-percent-good-enough/},
+  year = {2022}
+}</pre>
+</div>
+<!--/radix_placeholder_appendices-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<!--radix_placeholder_navigation_after_body--><html><body>
+<div class="distill-site-nav distill-site-footer">
+<p>Enjoyed your visit? <a href="https://twitter.com/seabbs">Tweet at me
+to let me know</a>.<br>If ever in Bristol/Bath/London lets get a
+beer/coffee or go for a run.<br><span style="font-size:0.8rem;">Last
+updated on March 18, 2025</span></p>
+<!-- Add function to open links to external links in new tab, from: -->
+<!-- https://yihui.name/en/2018/09/target-blank/ -->
+<script src="js/external-link.js"></script>
+</div>
+<!--/radix_placeholder_navigation_after_body-->
+</body></html>
+
+
+</body>
+
+</html>
