@@ -1,0 +1,26 @@
+/about /
+
+# automatically redirect old posts
+/post/* /blogdown-site/post/*
+
+# manually redirect old posts
+post/gettbinr-7-0/ post/blogdown-site/gettbinr-7-0/
+post/tb-gifs/ post/blogdown-site/tb-gifs/
+post/gettbinr-6-0/ post/blogdown-site/gettbinr-6-0/
+post/benchmarking-workstation-benchmarkme/ post/blogdown-site/benchmarking-workstation-benchmarkme/
+post/benchmarking-workstation-xgboost/ post/blogdown-site/benchmarking-workstation-xgboost/
+post/gettbinr-5-7/ post/blogdown-site/gettbinr-5-7/
+post/building-an-rstats-workstation/ post/blogdown-site/building-an-rstats-workstation/
+post/gettbinr-5-5/ post/blogdown-site/gettbinr-5-5/
+post/gettbinr-5-4/ post/blogdown-site/gettbinr-5-4/
+post/cluster-england-tb/ post/blogdown-site/cluster-england-tb/
+post/est-cfr-gettbinr/ post/blogdown-site/est-cfr-gettbinr/
+post/intro-gettbinr/ post/blogdown-site/intro-gettbinr/
+post/tb-england-wales/ post/blogdown-site/tb-england-wales/
+post/deep-dive-pp-premiums/ post/blogdown-site/deep-dive-pp-premiums/
+post/deep-dive-pp-open-house/ post/blogdown-site/deep-dive-pp-open-house/
+post/using-the-pebble-game/ post/blogdown-site/using-the-pebble-game/
+post/an-ancient-disease-a-scar-and-classroom-mathematics/ post/blogdown-site/an-ancient-disease-a-scar-and-classroom-mathematics/
+post/temp-long-loan/ post/blogdown-site/temp-long-loan/
+post/fc-risk-bad-debt/ post/blogdown-site/fc-risk-bad-debt/
+post/2017-06-10-vis-fc-loanbook-md/ post/blogdown-site/2017-06-10-vis-fc-loanbook-md/
