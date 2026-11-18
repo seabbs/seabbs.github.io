@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found</title>
+<meta name="robots" content="noindex">
+<script>
+  // Projects that moved: send old addresses to their new home, keeping the
+  // rest of the path.
+  (function () {
+    var p = location.pathname;
+    var old = "/epidemic-imputation-demonstration";
+    if (p.indexOf(old) !== 0) return;
+    var rest = p.slice(old.length);
+    var target;
+    if (rest.indexOf("/docs") === 0) {
+      // the docs moved to the root of the new site
+      target = "/EpidemicDates" + (rest.slice(5) || "/");
+    } else if (rest.indexOf("/js/") === 0 || rest.indexOf("/python/") === 0) {
+      // the old API docs are now the package pages
+      target = "/EpidemicDates/packages/";
+    } else {
+      // the interactive page and its files moved under /interactive/
+      target = "/EpidemicDates/interactive" + (rest || "/");
+    }
+    location.replace(target + location.search + location.hash);
+  })();
+</script>
+<style>
+  body { font: 16px/1.5 system-ui, sans-serif; max-width: 40rem; margin: 4rem auto; padding: 0 1rem; color: #222; }
+  a { color: #2a78d6; }
+</style>
+</head>
+<body>
+<h1>Page not found</h1>
+<p>Sorry, this page does not exist. Try the <a href="/">home page</a>.</p>
+</body>
+</html>

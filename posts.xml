@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>Sam Abbott</title>
+    <link>https://samabbott.co.uk/</link>
+    <atom:link href="https://samabbott.co.uk/posts.xml" rel="self" type="application/rss+xml"/>
+    <description>Links to my tweets, blog, notes, research ideas, code, and papers. 
+</description>
+    <image>
+      <title>Sam Abbott</title>
+      <url>https://samabbott.co.uk/images/party-hat.jpg</url>
+      <link>https://samabbott.co.uk/</link>
+    </image>
+    <generator>Distill</generator>
+    <lastBuildDate>Mon, 15 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Estimating epidemiological delay distributions for infectious diseases</title>
+      <dc:creator>Sam Abbott</dc:creator>
+      <link>https://samabbott.co.uk/posts/2024-01-15-estimating-epidemiological-delay-distributions-for-infectious-diseases</link>
+      <description>I summarise our research on refining delay distribution estimates in epidemic modeling, a journey prompted by my general confusion. We explore and compare various approaches, drawing insights from simulations and Ebola virus disease outbreak data, and suggest paths for future improvements. Also featuring Poppy, the puppy, who is currently gnawing on my hand and occasionally archiving my emails.</description>
+      <guid>https://samabbott.co.uk/posts/2024-01-15-estimating-epidemiological-delay-distributions-for-infectious-diseases</guid>
+      <pubDate>Mon, 15 Jan 2024 00:00:00 +0000</pubDate>
+      <media:content url="https://samabbott.co.uk/posts/2024-01-15-estimating-epidemiological-delay-distributions-for-infectious-diseases/poppy.png" medium="image" type="image/png" width="1529" height="1487"/>
+    </item>
+    <item>
+      <title>Data, Models, and Modellers during a Global Pandemic</title>
+      <dc:creator>Sam Abbott</dc:creator>
+      <link>https://samabbott.co.uk/posts/2023-01-04-iisa-data-models-and-modellers-during-a-global-pandemic</link>
+      <description>My notes for my points and answers as part of the Data, Models, and Modellers during a Global Pandemic discussion session at the International Indian Statistical Association 2022 meeting. Also includes the recording of my talk on our recent paper "Evaluating an epidemiologically motivated surrogate model of a multi-model ensemble" as part of the Pandemic forecasting: Lessons learnt from COVID-19 session.</description>
+      <guid>https://samabbott.co.uk/posts/2023-01-04-iisa-data-models-and-modellers-during-a-global-pandemic</guid>
+      <pubDate>Wed, 04 Jan 2023 00:00:00 +0000</pubDate>
+      <media:content url="https://samabbott.co.uk/posts/2023-01-04-iisa-data-models-and-modellers-during-a-global-pandemic/lead-slide.png" medium="image" type="image/png" width="5080" height="2857"/>
+    </item>
+    <item>
+      <title>How should we build methods and tools to prepare for future pandemics?</title>
+      <dc:creator>Sam Abbott</dc:creator>
+      <link>https://samabbott.co.uk/posts/2022-10-13-how-to-prepare-poll</link>
+      <description>There are several models that we could take to develop methods and tools in order to prepare for future pandemics. We should talk about them.</description>
+      <guid>https://samabbott.co.uk/posts/2022-10-13-how-to-prepare-poll</guid>
+      <pubDate>Thu, 13 Oct 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://samabbott.co.uk/posts/2022-10-13-how-to-prepare-poll/poll.png" medium="image" type="image/png" width="704" height="446"/>
+    </item>
+    <item>
+      <title>Evaluating an epidemiologically motivated surrogate model of a multi-model ensemble</title>
+      <dc:creator>Sam Abbott</dc:creator>
+      <link>https://samabbott.co.uk/posts/2022-10-13-surrogate-ensemble-forecast</link>
+      <description>Multi-model and multi-team ensemble forecasts have become widely used to generate reliable short-term forecasts. Whilst there is robust and consistent evidence that multi-team ensemble forecasts provide reliable and performant forecasts across domains they also have a range of downsides. The most significant is the difficulty in interpreting them. Here we develop a parsimonious forecast model based on observations of ensemble behaviour and evaluate its predictive performance.</description>
+      <guid>https://samabbott.co.uk/posts/2022-10-13-surrogate-ensemble-forecast</guid>
+      <pubDate>Thu, 13 Oct 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://samabbott.co.uk/posts/2022-10-13-surrogate-ensemble-forecast/forecast-performance.png" medium="image" type="image/png" width="1536" height="1536"/>
+    </item>
+    <item>
+      <title>What is 80% good enough for real-time infectious disease analyses?</title>
+      <dc:creator>Sam Abbott</dc:creator>
+      <dc:creator>Joel Hellewell</dc:creator>
+      <link>https://samabbott.co.uk/posts/2022-09-19-80-percent-good-enough</link>
+      <description>A comment piece exploring what factors led to limitations in some of the work we produced during the COVID-19 pandemic, whether this work was good enough, and some potential ideas for improving future work of a similar kind.</description>
+      <guid>https://samabbott.co.uk/posts/2022-09-19-80-percent-good-enough</guid>
+      <pubDate>Mon, 19 Sep 2022 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>My application to be an instructor with Applied Epi</title>
+      <dc:creator>Sam Abbott</dc:creator>
+      <link>https://samabbott.co.uk/posts/2022-08-19-applied-epi-application</link>
+      <description>The cover letter I provided as part of my application to be an instructor with the Applied Epi organisation. Contains background on the motivation for my work, details of my prior experience, and thoughts on user based software development.</description>
+      <guid>https://samabbott.co.uk/posts/2022-08-19-applied-epi-application</guid>
+      <pubDate>Fri, 19 Aug 2022 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>A very biased view of my recent research</title>
+      <dc:creator>Sam Abbott</dc:creator>
+      <link>https://samabbott.co.uk/posts/2022-04-11-a-very-biased-view-of-my-recent-research</link>
+      <description>A very biased overview of my recent research output as written for an internal promotion application. As such take everything with a large pinch of salt and replace all the I statements with We statements.</description>
+      <guid>https://samabbott.co.uk/posts/2022-04-11-a-very-biased-view-of-my-recent-research</guid>
+      <pubDate>Mon, 11 Apr 2022 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Reflections on two years estimating effective reproduction numbers</title>
+      <dc:creator>Sam Abbott</dc:creator>
+      <dc:creator>Sebastian Funk</dc:creator>
+      <link>https://samabbott.co.uk/posts/2022-03-25-rt-reflections</link>
+      <description>Over the last two years we have estimated reproduction numbers daily for several thousand locations, presented these estimates as a curated data set and visualised them at epiforecasts.io/covid. In this post we reflect on this project, summarising its utility, its integration with other projects, unanticipated challenges, and finally whether we would do it again.</description>
+      <guid>https://samabbott.co.uk/posts/2022-03-25-rt-reflections</guid>
+      <pubDate>Fri, 25 Mar 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://samabbott.co.uk/posts/2022-03-25-rt-reflections/example-rt.png" medium="image" type="image/png" width="3600" height="3600"/>
+    </item>
+    <item>
+      <title>Moving from Blogdown to Distill</title>
+      <dc:creator>Sam Abbott</dc:creator>
+      <link>https://samabbott.co.uk/posts/2021-11-10-blogdown-to-distill</link>
+      <description>A short note to state the obvious point that I have switched from using Blogdown to Distill with postcards.</description>
+      <guid>https://samabbott.co.uk/posts/2021-11-10-blogdown-to-distill</guid>
+      <pubDate>Wed, 10 Nov 2021 00:00:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>
